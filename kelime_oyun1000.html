@@ -2845,6 +2845,2348 @@ body.screen-match-active #backBtn.top-back{display:none !important;}
     const DAILY_TASK_ROUNDS = 10;
 
     const verbDetailOverrides = {
+
+            "merken": {
+  explanation: "merken bir şeyi fark etmek, anlamak veya akılda tutmak anlamına gelir. Reflexiv kullanıldığında (sich merken) 'aklında tutmak' anlamı kazanır. Günlük Almancada çok sık kullanılır.",
+  usage: "Günlük konuşmada ve yazı dilinde çok yaygındır.",
+  pattern: "etw. merken / sich etw. merken",
+  other: "fark etmek, aklında tutmak, hatırlamak",
+  synonyms: [
+    ["bemerken", "fark etmek"],
+    ["feststellen", "tespit etmek"],
+    ["erkennen", "fark etmek, tanımak"]
+  ],
+  examples: [
+    ["Ich habe sofort gemerkt, dass etwas nicht stimmt.", "Bir şeylerin yolunda gitmediğini hemen fark ettim."],
+    ["Kannst du dir meine Nummer merken?", "Numaramı aklında tutabilir misin?"],
+    ["Niemand hat den Fehler gemerkt.", "Kimse hatayı fark etmedi."],
+    ["Ich merke mir wichtige Informationen sehr schnell.", "Önemli bilgileri çok hızlı aklımda tutarım."],
+    ["Hast du das nicht gemerkt?", "Bunu fark etmedin mi?"]
+  ],
+  tip: "merken = fark etmek, sich etwas merken = akılda tutmak."
+},
+
+"wachbleiben": {
+  explanation: "wachbleiben uyumamak, uyanık kalmaya devam etmek anlamına gelir. Ayrılabilen (trennbar) bir fiildir.",
+  usage: "Gece geç saatlere kadar uyumayan kişiler için çok kullanılır.",
+  pattern: "wachbleiben",
+  other: "uyanık kalmak",
+  synonyms: [
+    ["nicht schlafen", "uyumamak"],
+    ["aufbleiben", "geç saate kadar ayakta kalmak"]
+  ],
+  examples: [
+    ["Ich muss heute lange wachbleiben.", "Bugün uzun süre uyanık kalmam gerekiyor."],
+    ["Die Kinder dürfen nicht so lange wachbleiben.", "Çocuklar bu kadar geç saate kadar uyanık kalamaz."],
+    ["Kannst du heute Nacht wachbleiben?", "Bu gece uyanık kalabilir misin?"],
+    ["Er blieb bis Mitternacht wach.", "Gece yarısına kadar uyanık kaldı."],
+    ["Ich konnte gestern kaum wachbleiben.", "Dün zar zor uyanık kalabildim."]
+  ],
+  tip: "Trennbar fiildir: Ich bleibe wach."
+},
+
+"üben": {
+  explanation: "üben bir beceriyi geliştirmek için tekrar yapmak anlamına gelir. Dil öğrenirken en sık kullanılan fiillerden biridir.",
+  usage: "Dil, spor, müzik ve sınav hazırlığında çok kullanılır.",
+  pattern: "etw. üben",
+  other: "pratik yapmak, çalışmak",
+  synonyms: [
+    ["trainieren", "antrenman yapmak"],
+    ["praktizieren", "uygulamak"]
+  ],
+  examples: [
+    ["Ich übe jeden Tag Deutsch.", "Her gün Almanca çalışıyorum."],
+    ["Wir üben für die Prüfung.", "Sınava çalışıyoruz."],
+    ["Du musst mehr sprechen üben.", "Daha fazla konuşma pratiği yapmalısın."],
+    ["Sie übt jeden Abend Klavier.", "Her akşam piyano çalışıyor."],
+    ["Übung macht den Meister.", "Pratik mükemmelleştirir."]
+  ],
+  tip: "Özellikle Deutsch üben kalıbı çok yaygındır."
+},
+
+"schaffen": {
+  explanation: "schaffen bir işi başarmak, tamamlamak veya bir şeyin üstesinden gelmek anlamına gelir.",
+  usage: "Hem günlük hayatta hem iş hayatında çok sık kullanılır.",
+  pattern: "etw. schaffen / es schaffen",
+  other: "başarmak, yetiştirmek",
+  synonyms: [
+    ["bewältigen", "üstesinden gelmek"],
+    ["erreichen", "başarmak"]
+  ],
+  examples: [
+    ["Ich schaffe das.", "Bunu başarırım."],
+    ["Schaffst du es bis morgen?", "Yarına kadar yetiştirebilir misin?"],
+    ["Wir haben die Arbeit rechtzeitig geschafft.", "İşi zamanında bitirdik."],
+    ["Er schafft jeden Tag sehr viel.", "Her gün çok iş başarıyor."],
+    ["Ich habe es endlich geschafft.", "Sonunda başardım."]
+  ],
+  tip: "Es schaffen kalıbı günlük Almancada son derece yaygındır."
+},
+
+"arbeiten als": {
+  explanation: "arbeiten als bir mesleği belirtmek için kullanılır ve 'olarak çalışmak' anlamına gelir.",
+  usage: "Meslek tanıtımlarında çok sık kullanılır.",
+  pattern: "als + Beruf arbeiten",
+  other: "olarak çalışmak",
+  synonyms: [
+    ["tätig sein als", "olarak görev yapmak"]
+  ],
+  examples: [
+    ["Ich arbeite als Lehrer.", "Öğretmen olarak çalışıyorum."],
+    ["Mein Bruder arbeitet als Arzt.", "Kardeşim doktor olarak çalışıyor."],
+    ["Sie arbeitet als Verkäuferin.", "Satış görevlisi olarak çalışıyor."],
+    ["Er arbeitet als Ingenieur.", "Mühendis olarak çalışıyor."],
+    ["Ich möchte später als Arzt arbeiten.", "İleride doktor olarak çalışmak istiyorum."]
+  ],
+  tip: "Mesleklerden önce artikel kullanılmaz: als Lehrer, als Arzt."
+},
+
+"liefern": {
+  explanation: "liefern bir ürünü, siparişi veya malı teslim etmek anlamına gelir.",
+  usage: "Kargo, alışveriş ve ticaret alanında çok kullanılır.",
+  pattern: "etw. liefern",
+  other: "teslim etmek, göndermek",
+  synonyms: [
+    ["zustellen", "teslim etmek"],
+    ["senden", "göndermek"]
+  ],
+  examples: [
+    ["Die Firma liefert die Ware morgen.", "Firma ürünü yarın teslim edecek."],
+    ["Wir liefern direkt nach Hause.", "Doğrudan eve teslim ediyoruz."],
+    ["Wann wird das Paket geliefert?", "Paket ne zaman teslim edilecek?"],
+    ["Amazon liefert sehr schnell.", "Amazon çok hızlı teslimat yapıyor."],
+    ["Die Bestellung wurde heute geliefert.", "Sipariş bugün teslim edildi."]
+  ],
+  tip: "Lieferung = teslimat ismi aynı kökten gelir."
+},
+
+"ruhig bleiben": {
+  explanation: "ruhig bleiben zor veya stresli durumlarda sakin kalmak anlamına gelir.",
+  usage: "Günlük konuşmada ve acil durumlarda çok kullanılır.",
+  pattern: "ruhig bleiben",
+  other: "sakin kalmak",
+  synonyms: [
+    ["gelassen bleiben", "soğukkanlı kalmak"],
+    ["sich beruhigen", "sakinleşmek"]
+  ],
+  examples: [
+    ["Bleib ruhig!", "Sakin ol!"],
+    ["Bitte bleiben Sie ruhig.", "Lütfen sakin olun."],
+    ["In schwierigen Situationen muss man ruhig bleiben.", "Zor durumlarda sakin kalmak gerekir."],
+    ["Er blieb trotz des Problems ruhig.", "Soruna rağmen sakin kaldı."],
+    ["Du solltest jetzt ruhig bleiben.", "Şu an sakin kalmalısın."]
+  ],
+  tip: "Almanya'da en sık duyulan emir cümlelerinden biri: Bleib ruhig!"
+},
+
+"vorbeikommen": {
+  explanation: "vorbeikommen kısa süreliğine uğramak veya ziyaret etmek anlamına gelir. Ayrılabilen fiildir.",
+  usage: "Arkadaş, komşu ve aile ziyaretlerinde çok kullanılır.",
+  pattern: "bei jdm. vorbeikommen",
+  other: "uğramak",
+  synonyms: [
+    ["besuchen", "ziyaret etmek"],
+    ["vorbeischauen", "uğramak"]
+  ],
+  examples: [
+    ["Komm doch mal vorbei.", "Bir ara uğra."],
+    ["Ich komme morgen bei dir vorbei.", "Yarın sana uğrayacağım."],
+    ["Kann ich heute Abend vorbeikommen?", "Bu akşam uğrayabilir miyim?"],
+    ["Er kam kurz vorbei.", "Kısa süreliğine uğradı."],
+    ["Meine Freunde kommen oft vorbei.", "Arkadaşlarım sık sık uğrar."]
+  ],
+  tip: "Trennbar fiildir: Ich komme vorbei."
+},
+
+"zustimmen": {
+  explanation: "zustimmen bir fikre, öneriye veya görüşe katılmak anlamına gelir. Dativ ile kullanılır.",
+  usage: "Toplantılarda ve günlük konuşmalarda çok yaygındır.",
+  pattern: "jdm. zustimmen",
+  other: "katılmak, onaylamak",
+  synonyms: [
+    ["einverstanden sein", "aynı fikirde olmak"],
+    ["akzeptieren", "kabul etmek"]
+  ],
+  examples: [
+    ["Ich stimme dir zu.", "Sana katılıyorum."],
+    ["Er stimmt dem Vorschlag zu.", "Öneriyi onaylıyor."],
+    ["Kannst du mir zustimmen?", "Bana katılabilir misin?"],
+    ["Die Mehrheit stimmte zu.", "Çoğunluk kabul etti."],
+    ["Ich kann dieser Meinung nicht zustimmen.", "Bu görüşe katılamıyorum."]
+  ],
+  tip: "Dativ ister: Ich stimme dir zu."
+},
+
+"ablehnen": {
+  explanation: "ablehnen bir teklifi, başvuruyu veya isteği reddetmek anlamına gelir.",
+  usage: "Resmi ve günlük dilde çok sık kullanılır.",
+  pattern: "etw. ablehnen",
+  other: "reddetmek",
+  synonyms: [
+    ["zurückweisen", "geri çevirmek"],
+    ["verweigern", "reddetmek"]
+  ],
+  examples: [
+    ["Ich lehne das Angebot ab.", "Teklifi reddediyorum."],
+    ["Die Behörde hat den Antrag abgelehnt.", "Kurum başvuruyu reddetti."],
+    ["Warum hast du das abgelehnt?", "Bunu neden reddettin?"],
+    ["Sie lehnte die Einladung höflich ab.", "Daveti nazikçe reddetti."],
+    ["Der Antrag wurde abgelehnt.", "Başvuru reddedildi."]
+  ],
+  tip: "Anerkennung ve vize süreçlerinde çok sık karşına çıkar."
+},
+
+"erlauben": {
+  explanation: "erlauben bir kişiye bir şeyi yapması için izin vermek anlamına gelir. Hem günlük hayatta hem de resmi durumlarda çok sık kullanılır.",
+  usage: "Aile içinde, okulda, iş yerinde ve resmi yazışmalarda yaygındır.",
+  pattern: "jdm. etw. erlauben",
+  other: "izin vermek, müsaade etmek",
+  synonyms: [
+    ["gestatten", "izin vermek"],
+    ["zulassen", "izin vermek"],
+    ["genehmigen", "onaylamak"]
+  ],
+  examples: [
+    ["Meine Eltern erlauben mir, lange aufzubleiben.", "Ailem geç saate kadar ayakta kalmama izin veriyor."],
+    ["Der Lehrer erlaubt den Schülern eine kurze Pause.", "Öğretmen öğrencilere kısa bir mola veriyor."],
+    ["Ist das hier erlaubt?", "Burada buna izin var mı?"],
+    ["Das Rauchen ist hier nicht erlaubt.", "Burada sigara içmeye izin verilmiyor."],
+    ["Der Chef hat mir einen freien Tag erlaubt.", "Patron bana bir gün izin verdi."]
+  ],
+  tip: "Sehr häufig: erlaubt sein = izinli olmak."
+},
+
+"sich melden": {
+  explanation: "sich melden haber vermek, iletişime geçmek, başvurmak veya söz istemek anlamlarında kullanılır. Çok yönlü ve çok yaygın bir fiildir.",
+  usage: "Telefon görüşmelerinde, e-postalarda ve iş başvurularında çok kullanılır.",
+  pattern: "sich bei jdm. melden",
+  other: "haber vermek, iletişime geçmek, başvurmak",
+  synonyms: [
+    ["Kontakt aufnehmen", "iletişime geçmek"],
+    ["anrufen", "aramak"],
+    ["Bescheid geben", "haber vermek"]
+  ],
+  examples: [
+    ["Ich melde mich morgen bei dir.", "Yarın sana haber vereceğim."],
+    ["Bitte melden Sie sich bei Fragen.", "Sorularınız olursa lütfen iletişime geçin."],
+    ["Er hat sich auf die Stelle gemeldet.", "İşe başvurdu."],
+    ["Warum meldest du dich nicht?", "Neden haber vermiyorsun?"],
+    ["Ich werde mich später noch einmal melden.", "Daha sonra tekrar haber vereceğim."]
+  ],
+  tip: "E-postalarda en sık kullanılan ifadelerden biridir."
+},
+
+"sich ändern": {
+  explanation: "sich ändern değişmek veya farklı hale gelmek anlamına gelir.",
+  usage: "Durumlar, planlar, hava durumu ve yaşam koşulları için sık kullanılır.",
+  pattern: "sich ändern",
+  other: "değişmek",
+  synonyms: [
+    ["sich verändern", "değişmek"],
+    ["anders werden", "farklı hale gelmek"]
+  ],
+  examples: [
+    ["Das Wetter ändert sich schnell.", "Hava hızlı değişiyor."],
+    ["Meine Pläne haben sich geändert.", "Planlarım değişti."],
+    ["Die Situation hat sich verbessert und geändert.", "Durum değişti ve iyileşti."],
+    ["Vieles hat sich in den letzten Jahren geändert.", "Son yıllarda birçok şey değişti."],
+    ["Daran wird sich nichts ändern.", "Bunda hiçbir şey değişmeyecek."]
+  ],
+  tip: "Reflexiv kullanılır: sich ändern."
+},
+
+"sich verschlechtern": {
+  explanation: "sich verschlechtern bir durumun daha kötü hale gelmesi anlamına gelir.",
+  usage: "Sağlık, ekonomi, hava ve genel durumlar için çok kullanılır.",
+  pattern: "sich verschlechtern",
+  other: "kötüleşmek",
+  synonyms: [
+    ["schlechter werden", "kötüleşmek"],
+    ["nachlassen", "gerilemek"]
+  ],
+  examples: [
+    ["Sein Zustand hat sich verschlechtert.", "Durumu kötüleşti."],
+    ["Das Wetter verschlechtert sich.", "Hava kötüleşiyor."],
+    ["Die wirtschaftliche Lage hat sich verschlechtert.", "Ekonomik durum kötüleşti."],
+    ["Leider hat sich die Situation erneut verschlechtert.", "Ne yazık ki durum yeniden kötüleşti."],
+    ["Die Schmerzen haben sich verschlechtert.", "Ağrılar kötüleşti."]
+  ],
+  tip: "Doktor raporlarında ve haberlerde çok sık görülür."
+},
+
+"sich trauen": {
+  explanation: "sich trauen cesaret etmek veya bir şeyi yapmaya çekinmemek anlamına gelir.",
+  usage: "Korku veya çekingenlik içeren durumlarda kullanılır.",
+  pattern: "sich trauen + zu Infinitiv",
+  other: "cesaret etmek",
+  synonyms: [
+    ["wagen", "göze almak"],
+    ["Mut haben", "cesaret sahibi olmak"]
+  ],
+  examples: [
+    ["Ich traue mich nicht zu fragen.", "Sormaya cesaret edemiyorum."],
+    ["Traust du dich?", "Cesaret edebilir misin?"],
+    ["Er hat sich endlich getraut, die Wahrheit zu sagen.", "Sonunda gerçeği söylemeye cesaret etti."],
+    ["Viele Menschen trauen sich nicht, Deutsch zu sprechen.", "Birçok insan Almanca konuşmaya cesaret edemiyor."],
+    ["Ich traue mich heute allein zu fahren.", "Bugün tek başıma sürmeye cesaret ediyorum."]
+  ],
+  tip: "Çok yaygın kalıp: Ich traue mich nicht."
+},
+
+"sich lohnen": {
+  explanation: "sich lohnen yapılan bir şeyin değmesi veya karşılığını vermesi anlamına gelir.",
+  usage: "Emek, para ve zaman harcanan durumlarda sık kullanılır.",
+  pattern: "sich lohnen",
+  other: "değmek",
+  synonyms: [
+    ["sich auszahlen", "karşılığını vermek"],
+    ["wert sein", "değerli olmak"]
+  ],
+  examples: [
+    ["Die Reise hat sich gelohnt.", "Seyahat değdi."],
+    ["Es lohnt sich, Deutsch zu lernen.", "Almanca öğrenmeye değer."],
+    ["Die Mühe lohnt sich.", "Emek değiyor."],
+    ["Hat sich das gelohnt?", "Değdi mi?"],
+    ["Der lange Weg hat sich gelohnt.", "Uzun yolculuk değdi."]
+  ],
+  tip: "Çok yaygın kalıp: Es lohnt sich."
+},
+
+"beantragen": {
+  explanation: "beantragen resmi olarak talepte bulunmak veya başvurmak anlamına gelir.",
+  usage: "Vize, oturum, yardım, vatandaşlık ve resmi işlemlerde çok sık kullanılır.",
+  pattern: "etw. beantragen",
+  other: "başvurmak, talep etmek",
+  synonyms: [
+    ["antragen", "başvurmak"],
+    ["beanmelden", "talep etmek"],
+    ["ersuchen", "talepte bulunmak"]
+  ],
+  examples: [
+    ["Ich beantrage ein Visum.", "Vize başvurusu yapıyorum."],
+    ["Er hat Wohngeld beantragt.", "Kira yardımı başvurusu yaptı."],
+    ["Wann kann ich die Approbation beantragen?", "Approbasyon için ne zaman başvurabilirim?"],
+    ["Sie hat einen neuen Pass beantragt.", "Yeni pasaport başvurusu yaptı."],
+    ["Der Antrag wurde gestern beantragt.", "Başvuru dün yapıldı."]
+  ],
+  tip: "Almanya'daki resmi işlemlerde en önemli fiillerden biridir."
+},
+
+"einreichen": {
+  explanation: "einreichen gerekli belgeleri veya evrakları resmi bir kuruma teslim etmek anlamına gelir.",
+  usage: "Başvuru süreçlerinde çok sık kullanılır.",
+  pattern: "etw. einreichen",
+  other: "sunmak, teslim etmek",
+  synonyms: [
+    ["abgeben", "teslim etmek"],
+    ["vorlegen", "sunmak"]
+  ],
+  examples: [
+    ["Bitte reichen Sie die Unterlagen ein.", "Lütfen belgeleri teslim edin."],
+    ["Ich habe alle Dokumente eingereicht.", "Tüm belgeleri sundum."],
+    ["Die Frist für das Einreichen endet morgen.", "Teslim süresi yarın bitiyor."],
+    ["Er hat den Antrag online eingereicht.", "Başvuruyu çevrim içi sundu."],
+    ["Die Unterlagen müssen vollständig eingereicht werden.", "Belgeler eksiksiz sunulmalıdır."]
+  ],
+  tip: "Anerkennung ve Approbation süreçlerinde çok sık karşına çıkar."
+},
+
+"verlängern": {
+  explanation: "verlängern bir sürenin, sözleşmenin veya geçerlilik tarihinin uzatılması anlamına gelir.",
+  usage: "Oturum, pasaport, sözleşme ve üyeliklerde sık kullanılır.",
+  pattern: "etw. verlängern",
+  other: "uzatmak",
+  synonyms: [
+    ["erneuern", "yenilemek"],
+    ["ausdehnen", "uzatmak"]
+  ],
+  examples: [
+    ["Ich möchte meinen Vertrag verlängern.", "Sözleşmemi uzatmak istiyorum."],
+    ["Kann ich meinen Aufenthalt verlängern?", "Oturumumu uzatabilir miyim?"],
+    ["Die Frist wurde verlängert.", "Süre uzatıldı."],
+    ["Sie hat ihr Visum verlängert.", "Vizesini uzattı."],
+    ["Wir müssen die Anmeldung verlängern.", "Kaydı uzatmamız gerekiyor."]
+  ],
+  tip: "Verlängerung = uzatma işlemi."
+},
+
+"fortsetzen": {
+  explanation: "fortsetzen yarım kalan bir işi veya etkinliği devam ettirmek anlamına gelir.",
+  usage: "Toplantılar, eğitimler, konuşmalar ve çalışmalar için sık kullanılır.",
+  pattern: "etw. fortsetzen",
+  other: "devam ettirmek, sürdürmek",
+  synonyms: [
+    ["weitermachen", "devam etmek"],
+    ["fortführen", "sürdürmek"]
+  ],
+  examples: [
+    ["Wir setzen das Gespräch morgen fort.", "Konuşmaya yarın devam edeceğiz."],
+    ["Bitte setzen Sie Ihre Arbeit fort.", "Lütfen çalışmanıza devam edin."],
+    ["Er möchte sein Studium fortsetzen.", "Eğitimine devam etmek istiyor."],
+    ["Nach der Pause wird der Unterricht fortgesetzt.", "Moladan sonra ders devam edecek."],
+    ["Ich werde das Projekt nächstes Jahr fortsetzen.", "Projeye gelecek yıl devam edeceğim."]
+  ],
+  tip: "Resmi dilde fortsetzen, günlük dilde ise çoğu zaman weitermachen kullanılır."
+},
+
+"vermeiden": {
+  explanation: "vermeiden istenmeyen bir durumun, hatanın, riskin veya problemin oluşmasını engellemek için ondan uzak durmak anlamına gelir.",
+  usage: "Günlük hayatta, sağlık, iş ve eğitim alanlarında çok sık kullanılır.",
+  pattern: "etw. vermeiden",
+  other: "kaçınmak, önlemek, sakınmak",
+  synonyms: [
+    ["verhindern", "önlemek"],
+    ["ausweichen", "kaçınmak"],
+    ["umgehen", "kaçınmak"]
+  ],
+  examples: [
+    ["Ich versuche Stress zu vermeiden.", "Stresten kaçınmaya çalışıyorum."],
+    ["Wir sollten unnötige Fehler vermeiden.", "Gereksiz hatalardan kaçınmalıyız."],
+    ["Er vermeidet Konflikte.", "Çatışmalardan kaçınıyor."],
+    ["Bitte vermeiden Sie Lärm.", "Lütfen gürültüden kaçının."],
+    ["Ich vermeide es, zu spät zu kommen.", "Geç kalmaktan kaçınıyorum."]
+  ],
+  tip: "Sehr häufig: Fehler vermeiden, Probleme vermeiden, Stress vermeiden."
+},
+
+"mitteilen": {
+  explanation: "mitteilen bir bilgiyi resmi veya yarı resmi şekilde bildirmek, duyurmak veya haber vermek anlamına gelir. Özellikle mektuplarda, e-postalarda ve iş ortamında çok kullanılır.",
+  usage: "Resmi yazışmalarda son derece yaygındır.",
+  pattern: "jdm. etw. mitteilen",
+  other: "bildirmek",
+  synonyms: [
+    ["informieren", "bilgilendirmek"],
+    ["Bescheid geben", "haber vermek"],
+    ["bekannt geben", "duyurmak"]
+  ],
+  examples: [
+    ["Bitte teilen Sie uns Ihre Entscheidung mit.", "Lütfen kararınızı bize bildirin."],
+    ["Ich möchte Ihnen etwas mitteilen.", "Size bir şey bildirmek istiyorum."],
+    ["Die Schule teilte die Ergebnisse mit.", "Okul sonuçları açıkladı."],
+    ["Bitte teilen Sie mir den Termin mit.", "Lütfen tarihi bana bildirin."],
+    ["Er hat uns die Nachricht sofort mitgeteilt.", "Haberi bize hemen bildirdi."]
+  ],
+  tip: "Sehr häufig in E-Mails."
+},
+
+"weitermachen": {
+  explanation: "weitermachen bir işe ara verdikten sonra devam etmek veya sürdürmek anlamına gelir. Günlük konuşmada fortsetzen fiilinden daha sık kullanılır.",
+  usage: "Günlük konuşmalarda çok yaygındır.",
+  pattern: "mit etw. weitermachen",
+  other: "devam etmek, sürdürmek",
+  synonyms: [
+    ["fortsetzen", "devam ettirmek"],
+    ["fortführen", "sürdürmek"]
+  ],
+  examples: [
+    ["Mach bitte weiter.", "Lütfen devam et."],
+    ["Nach der Pause machen wir weiter.", "Moladan sonra devam edeceğiz."],
+    ["Ich möchte mit dem Kurs weitermachen.", "Kursa devam etmek istiyorum."],
+    ["Kannst du morgen weitermachen?", "Yarın devam edebilir misin?"],
+    ["Wir machen dort weiter, wo wir aufgehört haben.", "Kaldığımız yerden devam ediyoruz."]
+  ],
+  tip: "Günlük dilde fortsetzen yerine çoğu zaman weitermachen kullanılır."
+},
+
+"wegbringen": {
+  explanation: "wegbringen bir şeyi bulunduğu yerden başka bir yere götürmek veya uzaklaştırmak anlamına gelir.",
+  usage: "Çöp, eşya, çocuk veya evrak taşırken sık kullanılır.",
+  pattern: "etw. wegbringen",
+  other: "götürmek, uzaklaştırmak",
+  synonyms: [
+    ["transportieren", "taşımak"],
+    ["mitnehmen", "götürmek"]
+  ],
+  examples: [
+    ["Ich bringe den Müll weg.", "Çöpü götürüyorum."],
+    ["Kannst du das Paket wegbringen?", "Paketi götürebilir misin?"],
+    ["Er brachte die Kinder zur Schule weg.", "Çocukları okula götürdü."],
+    ["Ich muss diese Unterlagen wegbringen.", "Bu evrakları götürmem gerekiyor."],
+    ["Sie bringt die alten Möbel weg.", "Eski mobilyaları götürüyor."]
+  ],
+  tip: "Trennbar fiildir: Ich bringe etwas weg."
+},
+
+"verlassen": {
+  explanation: "verlassen bir yerden ayrılmak veya birini terk etmek anlamına gelir.",
+  usage: "Ev, bina, ülke veya ilişki bağlamında çok kullanılır.",
+  pattern: "etw./jdn. verlassen",
+  other: "ayrılmak, terk etmek",
+  synonyms: [
+    ["weggehen", "ayrılmak"],
+    ["zurücklassen", "geride bırakmak"]
+  ],
+  examples: [
+    ["Ich verlasse das Haus um sieben Uhr.", "Evden saat yedide çıkıyorum."],
+    ["Er hat die Firma verlassen.", "Şirketten ayrıldı."],
+    ["Bitte verlassen Sie das Gebäude.", "Lütfen binayı terk edin."],
+    ["Sie hat ihren Mann verlassen.", "Kocasını terk etti."],
+    ["Wann verlässt der Zug den Bahnhof?", "Tren istasyondan ne zaman ayrılıyor?"]
+  ],
+  tip: "Dikkat: verlassen Akkusativ alır, 'aus' kullanılmaz."
+},
+
+"betreten": {
+  explanation: "betreten bir yere adım atmak veya içeri girmek anlamına gelir.",
+  usage: "Resmi duyurularda ve günlük dilde sık kullanılır.",
+  pattern: "etw. betreten",
+  other: "girmek, içeri adım atmak",
+  synonyms: [
+    ["hineingehen", "içeri girmek"],
+    ["eintreten", "girmek"]
+  ],
+  examples: [
+    ["Bitte betreten Sie den Raum.", "Lütfen odaya girin."],
+    ["Er betrat das Büro.", "Ofise girdi."],
+    ["Niemand darf das Gelände betreten.", "Kimse araziye giremez."],
+    ["Sie betrat die Bühne unter Applaus.", "Alkışlar eşliğinde sahneye çıktı."],
+    ["Wann haben Sie das Gebäude betreten?", "Binaya ne zaman girdiniz?"]
+  ],
+  tip: "Verlassen ↔ betreten karşıt anlamlı olarak sık birlikte öğrenilir."
+},
+
+"erklären lassen": {
+  explanation: "erklären lassen bir konunun başka biri tarafından açıklanmasını istemek anlamına gelir.",
+  usage: "Eğitim ve öğrenme süreçlerinde yaygındır.",
+  pattern: "sich etw. erklären lassen",
+  other: "açıklatmak",
+  synonyms: [
+    ["sich erläutern lassen", "açıklatmak"],
+    ["nachfragen", "soru sorarak açıklama istemek"]
+  ],
+  examples: [
+    ["Ich lasse mir die Grammatik erklären.", "Grameri açıklatıyorum."],
+    ["Lass dir das noch einmal erklären.", "Bunu bir kez daha açıklattır."],
+    ["Er ließ sich den Vertrag erklären.", "Sözleşmeyi açıklattı."],
+    ["Ich habe mir alles genau erklären lassen.", "Her şeyi ayrıntılı olarak açıklattım."],
+    ["Die Schüler lassen sich die Aufgabe erklären.", "Öğrenciler görevi açıklattırıyor."]
+  ],
+  tip: "En yaygın kullanım: sich etwas erklären lassen."
+},
+
+"sich bedanken": {
+  explanation: "sich bedanken birine teşekkür etmek anlamına gelir. Resmi ve günlük dilde çok yaygındır.",
+  usage: "E-posta, mektup ve günlük konuşmalarda çok kullanılır.",
+  pattern: "sich bei jdm. für etw. bedanken",
+  other: "teşekkür etmek",
+  synonyms: [
+    ["danken", "teşekkür etmek"],
+    ["Dank aussprechen", "teşekkür sunmak"]
+  ],
+  examples: [
+    ["Ich bedanke mich für Ihre Hilfe.", "Yardımınız için teşekkür ederim."],
+    ["Er bedankte sich bei allen Teilnehmern.", "Tüm katılımcılara teşekkür etti."],
+    ["Wir möchten uns herzlich bedanken.", "İçtenlikle teşekkür etmek istiyoruz."],
+    ["Sie bedankte sich für das Geschenk.", "Hediye için teşekkür etti."],
+    ["Ich möchte mich nochmals bedanken.", "Bir kez daha teşekkür etmek istiyorum."]
+  ],
+  tip: "Çok yaygın kalıp: bei jemandem für etwas bedanken."
+},
+
+"sich anmelden": {
+  explanation: "sich anmelden bir kursa, sisteme, etkinliğe veya kuruma kayıt olmak anlamına gelir.",
+  usage: "Almanya'da resmi işlemlerde son derece sık kullanılır.",
+  pattern: "sich für etw. anmelden",
+  other: "kaydolmak, başvurmak",
+  synonyms: [
+    ["registrieren", "kayıt olmak"],
+    ["einschreiben", "kayıt yaptırmak"]
+  ],
+  examples: [
+    ["Ich habe mich für den Kurs angemeldet.", "Kursa kayıt oldum."],
+    ["Bitte melden Sie sich online an.", "Lütfen çevrim içi kayıt olun."],
+    ["Wann kann ich mich anmelden?", "Ne zaman kayıt olabilirim?"],
+    ["Sie hat sich für die Prüfung angemeldet.", "Sınava kayıt oldu."],
+    ["Man muss sich vorher anmelden.", "Önceden kayıt olmak gerekir."]
+  ],
+  tip: "Anmeldung = kayıt işlemi."
+},
+
+"sich abmelden": {
+  explanation: "sich abmelden bir yerden, sistemden veya kurstan kaydını sildirmek ya da çıkış yapmak anlamına gelir.",
+  usage: "Kurslar, belediye kayıtları ve bilgisayar sistemlerinde yaygındır.",
+  pattern: "sich von etw. abmelden",
+  other: "kaydını sildirmek, çıkış yapmak",
+  synonyms: [
+    ["austragen", "kayıttan çıkarmak"],
+    ["kündigen", "iptal etmek"]
+  ],
+  examples: [
+    ["Ich habe mich vom Kurs abgemeldet.", "Kurstan kaydımı sildirdim."],
+    ["Bitte melden Sie sich ab.", "Lütfen çıkış yapın."],
+    ["Er hat sich vom Newsletter abgemeldet.", "E-posta aboneliğini iptal etti."],
+    ["Wann muss ich mich abmelden?", "Ne zaman kaydımı sildirmem gerekiyor?"],
+    ["Sie hat sich offiziell abgemeldet.", "Resmi olarak kaydını sildirdi."]
+  ],
+  tip: "Anmelden ↔ Abmelden birlikte öğrenilmelidir."
+},
+
+"zustande kommen": {
+  explanation: "zustande kommen bir olayın, anlaşmanın, ilişkinin veya sonucun gerçekleşmesi, ortaya çıkması anlamına gelir. Genellikle süreç sonunda oluşan durumlar için kullanılır.",
+  usage: "Sözleşmelerde, anlaşmalarda ve resmi yazışmalarda çok yaygındır.",
+  pattern: "zustande kommen",
+  other: "gerçekleşmek, meydana gelmek",
+  synonyms: [
+    ["entstehen", "ortaya çıkmak"],
+    ["erfolgen", "gerçekleşmek"],
+    ["sich ergeben", "ortaya çıkmak"]
+  ],
+  examples: [
+    ["Der Vertrag ist zustande gekommen.", "Sözleşme gerçekleşti."],
+    ["Wie ist diese Entscheidung zustande gekommen?", "Bu karar nasıl ortaya çıktı?"],
+    ["Die Zusammenarbeit kam schnell zustande.", "İş birliği hızlıca gerçekleşti."],
+    ["Ohne Hilfe wäre das nicht zustande gekommen.", "Yardım olmadan bu gerçekleşmezdi."],
+    ["Das Treffen kam leider nicht zustande.", "Toplantı ne yazık ki gerçekleşmedi."]
+  ],
+  tip: "Sehr häufig: Der Vertrag kommt zustande."
+},
+
+"beurteilen": {
+  explanation: "beurteilen bir kişi, durum veya performans hakkında değerlendirme yapmak ve görüş bildirmek anlamına gelir.",
+  usage: "Eğitim, iş hayatı ve resmi raporlarda sık kullanılır.",
+  pattern: "jdn./etw. beurteilen",
+  other: "değerlendirmek, hüküm vermek",
+  synonyms: [
+    ["bewerten", "değerlendirmek"],
+    ["einschätzen", "değerlendirmek"],
+    ["begutachten", "incelemek"]
+  ],
+  examples: [
+    ["Der Lehrer beurteilt die Leistung der Schüler.", "Öğretmen öğrencilerin performansını değerlendiriyor."],
+    ["Es ist schwer, die Situation zu beurteilen.", "Durumu değerlendirmek zor."],
+    ["Der Arzt beurteilt die Untersuchungsergebnisse.", "Doktor muayene sonuçlarını değerlendiriyor."],
+    ["Bitte beurteilen Sie meinen Vorschlag.", "Lütfen önerimi değerlendirin."],
+    ["Man sollte niemanden zu schnell beurteilen.", "Kimseyi çok hızlı yargılamamak gerekir."]
+  ],
+  tip: "Resmi raporlarda çok sık kullanılır."
+},
+
+"einschätzen": {
+  explanation: "einschätzen bir kişi, durum veya olasılık hakkında tahminde bulunmak ya da değerlendirme yapmak anlamına gelir.",
+  usage: "İş hayatında, sınavlarda ve günlük konuşmalarda yaygındır.",
+  pattern: "jdn./etw. einschätzen",
+  other: "değerlendirmek, tahmin etmek",
+  synonyms: [
+    ["beurteilen", "değerlendirmek"],
+    ["bewerten", "değerlendirmek"],
+    ["abschätzen", "tahmin etmek"]
+  ],
+  examples: [
+    ["Ich kann die Situation gut einschätzen.", "Durumu iyi değerlendirebiliyorum."],
+    ["Wie schätzen Sie die Lage ein?", "Durumu nasıl değerlendiriyorsunuz?"],
+    ["Er wurde falsch eingeschätzt.", "Yanlış değerlendirildi."],
+    ["Die Gefahr wurde unterschätzt.", "Tehlike yeterince değerlendirilemedi."],
+    ["Ich kann das noch nicht einschätzen.", "Bunu henüz değerlendiremiyorum."]
+  ],
+  tip: "Sehr häufig: Wie schätzen Sie das ein?"
+},
+
+"begründen": {
+  explanation: "begründen bir kararın, görüşün veya davranışın nedenini açıklamak anlamına gelir.",
+  usage: "Resmi yazışmalarda, sınavlarda ve akademik metinlerde çok sık kullanılır.",
+  pattern: "etw. begründen",
+  other: "gerekçelendirmek",
+  synonyms: [
+    ["erklären", "açıklamak"],
+    ["rechtfertigen", "savunmak"],
+    ["argumentieren", "gerekçe sunmak"]
+  ],
+  examples: [
+    ["Bitte begründen Sie Ihre Antwort.", "Lütfen cevabınızı gerekçelendirin."],
+    ["Er begründete seine Entscheidung ausführlich.", "Kararını ayrıntılı şekilde gerekçelendirdi."],
+    ["Kannst du das begründen?", "Bunu gerekçelendirebilir misin?"],
+    ["Die Ablehnung wurde schriftlich begründet.", "Ret yazılı olarak gerekçelendirildi."],
+    ["Sie konnte ihre Meinung gut begründen.", "Görüşünü iyi gerekçelendirebildi."]
+  ],
+  tip: "Sınavlarda çok duyulan ifade: Begründen Sie Ihre Antwort."
+},
+
+"rechtfertigen": {
+  explanation: "rechtfertigen bir davranışı veya kararı haklı göstermeye çalışmak anlamına gelir.",
+  usage: "Eleştiri veya suçlama durumlarında sık kullanılır.",
+  pattern: "etw. rechtfertigen",
+  other: "haklı çıkarmak, savunmak",
+  synonyms: [
+    ["begründen", "gerekçelendirmek"],
+    ["verteidigen", "savunmak"]
+  ],
+  examples: [
+    ["Er versucht sein Verhalten zu rechtfertigen.", "Davranışını haklı çıkarmaya çalışıyor."],
+    ["Das lässt sich nicht rechtfertigen.", "Bu haklı gösterilemez."],
+    ["Sie rechtfertigte ihre Entscheidung.", "Kararını savundu."],
+    ["Wie wollen Sie das rechtfertigen?", "Bunu nasıl savunacaksınız?"],
+    ["Nichts kann diese Tat rechtfertigen.", "Hiçbir şey bu davranışı haklı çıkaramaz."]
+  ],
+  tip: "Olumsuz bağlamlarda çok kullanılır."
+},
+
+"überzeugen": {
+  explanation: "überzeugen bir kişinin fikrini değiştirecek kadar güçlü şekilde ikna etmek anlamına gelir.",
+  usage: "İş görüşmeleri, satış ve günlük konuşmalarda çok yaygındır.",
+  pattern: "jdn. von etw. überzeugen",
+  other: "ikna etmek",
+  synonyms: [
+    ["überreden", "ikna etmek"],
+    ["gewinnen", "kazanmak"]
+  ],
+  examples: [
+    ["Ich konnte ihn überzeugen.", "Onu ikna edebildim."],
+    ["Sie hat mich von ihrer Idee überzeugt.", "Beni fikrine ikna etti."],
+    ["Das Ergebnis überzeugt mich nicht.", "Sonuç beni ikna etmiyor."],
+    ["Kannst du ihn davon überzeugen?", "Onu buna ikna edebilir misin?"],
+    ["Seine Argumente waren überzeugend.", "Argümanları ikna ediciydi."]
+  ],
+  tip: "En yaygın kalıp: jdn. von etw. überzeugen."
+},
+
+"ableiten": {
+  explanation: "ableiten eldeki bilgilerden mantıklı bir sonuç çıkarmak anlamına gelir.",
+  usage: "Bilimsel, akademik ve resmi metinlerde sık kullanılır.",
+  pattern: "etw. aus etw. ableiten",
+  other: "sonuç çıkarmak, türetmek",
+  synonyms: [
+    ["schlussfolgern", "sonuç çıkarmak"],
+    ["herleiten", "türetmek"]
+  ],
+  examples: [
+    ["Man kann das aus den Daten ableiten.", "Bu verilerden sonuç çıkarılabilir."],
+    ["Welche Schlussfolgerung leiten Sie daraus ab?", "Bundan hangi sonucu çıkarıyorsunuz?"],
+    ["Der Begriff wird vom Lateinischen abgeleitet.", "Kavram Latince'den türetilmiştir."],
+    ["Daraus lässt sich nichts ableiten.", "Bundan bir sonuç çıkarılamaz."],
+    ["Die Regel wurde logisch abgeleitet.", "Kural mantıksal olarak türetildi."]
+  ],
+  tip: "Akademik Almancada çok önemlidir."
+},
+
+"widersprechen": {
+  explanation: "widersprechen bir görüşe veya ifadeye karşı çıkmak, itiraz etmek anlamına gelir. Dativ ile kullanılır.",
+  usage: "Tartışmalarda ve resmi görüşmelerde sık kullanılır.",
+  pattern: "jdm. widersprechen",
+  other: "itiraz etmek, karşı çıkmak",
+  synonyms: [
+    ["Einwände erheben", "itiraz etmek"],
+    ["ablehnen", "karşı çıkmak"]
+  ],
+  examples: [
+    ["Ich muss dir widersprechen.", "Sana itiraz etmeliyim."],
+    ["Er widersprach dem Bericht.", "Rapora itiraz etti."],
+    ["Niemand hat ihm widersprochen.", "Kimse ona karşı çıkmadı."],
+    ["Darf ich kurz widersprechen?", "Kısaca itiraz edebilir miyim?"],
+    ["Die Aussage widerspricht den Fakten.", "Bu ifade gerçeklerle çelişiyor."]
+  ],
+  tip: "Dativ ister: Ich widerspreche dir."
+},
+
+"einwenden": {
+  explanation: "einwenden bir görüşe karşı farklı bir görüş veya itiraz sunmak anlamına gelir.",
+  usage: "Resmi tartışmalarda ve toplantılarda yaygındır.",
+  pattern: "etw. einwenden",
+  other: "itiraz etmek, karşı görüş bildirmek",
+  synonyms: [
+    ["widersprechen", "itiraz etmek"],
+    ["kritisieren", "eleştirmek"]
+  ],
+  examples: [
+    ["Dagegen kann man nichts einwenden.", "Buna karşı çıkılacak bir şey yok."],
+    ["Er wandte ein, dass das zu teuer sei.", "Bunun çok pahalı olduğunu öne sürdü."],
+    ["Niemand hat etwas eingewendet.", "Kimse itiraz etmedi."],
+    ["Was möchten Sie dazu einwenden?", "Buna karşı ne söylemek istiyorsunuz?"],
+    ["Sie wandte berechtigte Kritik ein.", "Haklı bir eleştiri getirdi."]
+  ],
+  tip: "Çok yaygın kalıp: Dagegen kann man nichts einwenden."
+},
+
+"klären": {
+  explanation: "klären bir sorunu, belirsizliği veya anlaşmazlığı açıklığa kavuşturmak anlamına gelir.",
+  usage: "İş hayatında, resmi işlemlerde ve günlük konuşmada çok sık kullanılır.",
+  pattern: "etw. klären",
+  other: "netleştirmek, açıklığa kavuşturmak",
+  synonyms: [
+    ["aufklären", "açıklığa kavuşturmak"],
+    ["lösen", "çözmek"],
+    ["besprechen", "görüşmek"]
+  ],
+  examples: [
+    ["Wir müssen das Problem klären.", "Bu sorunu netleştirmeliyiz."],
+    ["Lassen Sie uns das klären.", "Bunu açıklığa kavuşturalım."],
+    ["Die Frage wurde geklärt.", "Soru açıklığa kavuşturuldu."],
+    ["Ich möchte einige Punkte klären.", "Bazı noktaları netleştirmek istiyorum."],
+    ["Das können wir später klären.", "Bunu daha sonra netleştirebiliriz."]
+  ],
+  tip: "Sehr häufig: Das müssen wir klären."
+},
+
+
+"einschreiten": {
+  explanation: "einschreiten bir olaya müdahale etmek, duruma karışmak veya gerekli önlemi almak anlamına gelir. Genellikle polis, öğretmen, yönetici veya yetkili kişiler için kullanılır.",
+  usage: "Resmi durumlarda ve haber dilinde çok yaygındır.",
+  pattern: "einschreiten",
+  other: "müdahale etmek",
+  synonyms: [
+    ["eingreifen", "müdahale etmek"],
+    ["handeln", "harekete geçmek"],
+    ["reagieren", "tepki vermek"]
+  ],
+  examples: [
+    ["Die Polizei musste einschreiten.", "Polis müdahale etmek zorunda kaldı."],
+    ["Der Lehrer schritt sofort ein.", "Öğretmen hemen müdahale etti."],
+    ["Wann sollte man einschreiten?", "Ne zaman müdahale etmek gerekir?"],
+    ["Die Behörden sind eingeschritten.", "Yetkililer müdahale etti."],
+    ["Niemand wollte einschreiten.", "Kimse müdahale etmek istemedi."]
+  ],
+  tip: "Sehr häufig: Die Polizei schritt ein."
+},
+
+"reagieren": {
+  explanation: "reagieren bir olaya, habere veya duruma tepki vermek anlamına gelir.",
+  usage: "Günlük hayatta, iş ortamında ve tıbbi alanlarda çok sık kullanılır.",
+  pattern: "auf etw. reagieren",
+  other: "tepki vermek, yanıt vermek",
+  synonyms: [
+    ["antworten", "cevap vermek"],
+    ["handeln", "harekete geçmek"],
+    ["erwidern", "yanıt vermek"]
+  ],
+  examples: [
+    ["Er reagierte schnell auf die Nachricht.", "Habere hızlı tepki verdi."],
+    ["Wie hast du reagiert?", "Nasıl tepki verdin?"],
+    ["Sie reagiert allergisch auf Nüsse.", "Kuruyemişlere alerjik tepki veriyor."],
+    ["Wir müssen sofort reagieren.", "Hemen tepki vermeliyiz."],
+    ["Warum reagierst du nicht?", "Neden tepki vermiyorsun?"]
+  ],
+  tip: "Çok yaygın kalıp: auf etwas reagieren."
+},
+
+"wahrnehmen": {
+  explanation: "wahrnehmen bir şeyi fark etmek, algılamak veya bilinçli şekilde gözlemlemek anlamına gelir.",
+  usage: "Resmi dilde ve psikoloji alanında sık kullanılır.",
+  pattern: "etw. wahrnehmen",
+  other: "algılamak, fark etmek",
+  synonyms: [
+    ["bemerken", "fark etmek"],
+    ["erkennen", "algılamak"],
+    ["spüren", "hissetmek"]
+  ],
+  examples: [
+    ["Ich habe eine Veränderung wahrgenommen.", "Bir değişiklik fark ettim."],
+    ["Kinder nehmen vieles schnell wahr.", "Çocuklar birçok şeyi hızlı fark eder."],
+    ["Haben Sie das Problem wahrgenommen?", "Sorunu fark ettiniz mi?"],
+    ["Er nimmt seine Umgebung bewusst wahr.", "Çevresini bilinçli şekilde algılıyor."],
+    ["Die Unterschiede sind deutlich wahrnehmbar.", "Farklar açıkça algılanabiliyor."]
+  ],
+  tip: "Resmi dilde merken yerine sık kullanılır."
+},
+
+"feststellen": {
+  explanation: "feststellen bir durumu, hatayı veya gerçeği tespit etmek ve belirlemek anlamına gelir.",
+  usage: "Resmi yazışmalarda, raporlarda ve sağlık alanında çok sık kullanılır.",
+  pattern: "etw. feststellen",
+  other: "tespit etmek",
+  synonyms: [
+    ["bemerken", "fark etmek"],
+    ["erkennen", "tespit etmek"],
+    ["konstatieren", "tespit etmek"]
+  ],
+  examples: [
+    ["Der Arzt stellte eine Krankheit fest.", "Doktor bir hastalık tespit etti."],
+    ["Wir haben einen Fehler festgestellt.", "Bir hata tespit ettik."],
+    ["Es wurde kein Problem festgestellt.", "Herhangi bir sorun tespit edilmedi."],
+    ["Die Polizei stellte den Schaden fest.", "Polis hasarı tespit etti."],
+    ["Man stellte fest, dass alles korrekt war.", "Her şeyin doğru olduğu tespit edildi."]
+  ],
+  tip: "Sehr häufig in Arztbriefen und Behördenbriefen."
+},
+
+"feststellen lassen": {
+  explanation: "feststellen lassen bir durumun veya sorunun uzman biri tarafından tespit edilmesini sağlamak anlamına gelir.",
+  usage: "Doktor, bilirkişi ve teknik incelemelerde yaygındır.",
+  pattern: "etw. feststellen lassen",
+  other: "tespit ettirmek",
+  synonyms: [
+    ["überprüfen lassen", "kontrol ettirmek"],
+    ["untersuchen lassen", "inceletmek"]
+  ],
+  examples: [
+    ["Ich lasse mein Auto überprüfen und den Schaden feststellen.", "Arabamı kontrol ettirip hasarı tespit ettiriyorum."],
+    ["Sie sollten das ärztlich feststellen lassen.", "Bunu doktora tespit ettirmelisiniz."],
+    ["Der Fehler muss festgestellt werden.", "Hatanın tespit edilmesi gerekiyor."],
+    ["Ich habe die Ursache feststellen lassen.", "Sebebi tespit ettirdim."],
+    ["Lassen Sie das von einem Fachmann feststellen.", "Bunu bir uzmana tespit ettirin."]
+  ],
+  tip: "Doktor ve sigorta süreçlerinde sık kullanılır."
+},
+
+"tolerieren": {
+  explanation: "tolerieren hoşuna gitmese bile bir davranışı veya durumu kabul etmek anlamına gelir.",
+  usage: "İş hayatında, eğitimde ve toplumsal konularda sık kullanılır.",
+  pattern: "etw./jdn. tolerieren",
+  other: "hoş görmek, katlanmak",
+  synonyms: [
+    ["akzeptieren", "kabul etmek"],
+    ["dulden", "katlanmak"]
+  ],
+  examples: [
+    ["Ich kann das nicht länger tolerieren.", "Buna daha fazla katlanamam."],
+    ["Die Schule toleriert kein Mobbing.", "Okul zorbalığa tolerans göstermiyor."],
+    ["Man sollte andere Meinungen tolerieren.", "Başkalarının fikirlerine hoşgörü göstermek gerekir."],
+    ["Der Chef toleriert solche Fehler nicht.", "Patron bu tür hatalara tolerans göstermiyor."],
+    ["Dieses Verhalten wird nicht toleriert.", "Bu davranış hoş görülmeyecek."]
+  ],
+  tip: "Sehr häufig: Das wird nicht toleriert."
+},
+
+"respektieren": {
+  explanation: "respektieren bir kişiye, görüşe veya kurala saygı göstermek anlamına gelir.",
+  usage: "Günlük hayatta ve iş yaşamında çok sık kullanılır.",
+  pattern: "jdn./etw. respektieren",
+  other: "saygı duymak",
+  synonyms: [
+    ["achten", "saygı göstermek"],
+    ["würdigen", "değer vermek"]
+  ],
+  examples: [
+    ["Ich respektiere deine Meinung.", "Görüşüne saygı duyuyorum."],
+    ["Man muss die Regeln respektieren.", "Kurallara saygı göstermek gerekir."],
+    ["Sie respektiert ihre Eltern sehr.", "Anne babasına çok saygı duyuyor."],
+    ["Bitte respektieren Sie meine Entscheidung.", "Lütfen kararıma saygı duyun."],
+    ["Respektierst du seine Meinung?", "Onun görüşüne saygı duyuyor musun?"]
+  ],
+  tip: "Respekt ve respektieren aynı kökten gelir."
+},
+
+"sich positionieren": {
+  explanation: "sich positionieren bir konuda açık şekilde tarafını veya görüşünü belirtmek anlamına gelir.",
+  usage: "Siyaset, medya ve iş dünyasında sık kullanılır.",
+  pattern: "sich zu etw. positionieren",
+  other: "tavır almak, konumlanmak",
+  synonyms: [
+    ["Stellung beziehen", "tavır almak"],
+    ["sich äußern", "görüş bildirmek"]
+  ],
+  examples: [
+    ["Er hat sich klar dazu positioniert.", "Bu konuda açık tavır aldı."],
+    ["Die Firma positioniert sich nachhaltig.", "Şirket sürdürülebilirlik konusunda konumlanıyor."],
+    ["Man sollte sich eindeutig positionieren.", "Net tavır almak gerekir."],
+    ["Wie positionieren Sie sich dazu?", "Bu konuda tavrınız nedir?"],
+    ["Sie hat sich öffentlich positioniert.", "Kamuoyu önünde tavır aldı."]
+  ],
+  tip: "Çok sık kalıp: Stellung beziehen."
+},
+
+"sich festlegen": {
+  explanation: "sich festlegen bir konuda kesin karar vermek veya bağlayıcı bir görüş belirtmek anlamına gelir.",
+  usage: "Planlama, iş hayatı ve günlük konuşmada yaygındır.",
+  pattern: "sich auf etw. festlegen",
+  other: "karar vermek, kesinleşmek",
+  synonyms: [
+    ["entscheiden", "karar vermek"],
+    ["bestimmen", "belirlemek"]
+  ],
+  examples: [
+    ["Ich möchte mich noch nicht festlegen.", "Henüz karar vermek istemiyorum."],
+    ["Wir müssen uns auf einen Termin festlegen.", "Bir tarih belirlemeliyiz."],
+    ["Er hat sich bereits festgelegt.", "Kararını çoktan verdi."],
+    ["Kannst du dich festlegen?", "Kesin karar verebilir misin?"],
+    ["Sie wollte sich nicht festlegen.", "Kesin görüş belirtmek istemedi."]
+  ],
+  tip: "Sehr häufig: Ich möchte mich noch nicht festlegen."
+},
+
+"sich durchsetzen": {
+  explanation: "sich durchsetzen zorluklara rağmen kendi görüşünü, hakkını veya hedefini kabul ettirmek anlamına gelir.",
+  usage: "İş hayatında ve sosyal ilişkilerde çok kullanılır.",
+  pattern: "sich durchsetzen",
+  other: "kendini kabul ettirmek",
+  synonyms: [
+    ["Erfolg haben", "başarılı olmak"],
+    ["siegen", "galip gelmek"],
+    ["dominieren", "üstün gelmek"]
+  ],
+  examples: [
+    ["Er konnte sich durchsetzen.", "Kendini kabul ettirebildi."],
+    ["Sie setzt sich immer durch.", "Her zaman istediğini kabul ettiriyor."],
+    ["Man muss lernen, sich durchzusetzen.", "Kendini kabul ettirmeyi öğrenmek gerekir."],
+    ["Seine Idee hat sich durchgesetzt.", "Onun fikri kabul gördü."],
+    ["Am Ende setzte sich die bessere Lösung durch.", "Sonunda daha iyi çözüm kabul edildi."]
+  ],
+  tip: "Sehr häufig im Berufsleben."
+},
+
+
+"sich bewähren": {
+  explanation: "sich bewähren bir kişinin veya bir şeyin zor bir durumda başarılı olduğunu ve işe yaradığını kanıtlaması anlamına gelir.",
+  usage: "İş hayatında, eğitimde ve değerlendirmelerde sık kullanılır.",
+  pattern: "sich bewähren",
+  other: "kendini kanıtlamak",
+  synonyms: [
+    ["sich beweisen", "kendini kanıtlamak"],
+    ["Erfolg haben", "başarılı olmak"],
+    ["funktionieren", "işe yaramak"]
+  ],
+  examples: [
+    ["Er hat sich in seiner neuen Position bewährt.", "Yeni görevinde kendini kanıtladı."],
+    ["Das System hat sich bewährt.", "Sistem işe yaradığını kanıtladı."],
+    ["Sie konnte sich schnell bewähren.", "Kendisini hızlıca kanıtlayabildi."],
+    ["Diese Methode hat sich bewährt.", "Bu yöntem kendini kanıtladı."],
+    ["Wer sich bewährt, bekommt oft mehr Verantwortung.", "Kendini kanıtlayanlar genellikle daha fazla sorumluluk alır."]
+  ],
+  tip: "Probezeit ve iş değerlendirmelerinde sık görülür."
+},
+
+"sich ergeben": {
+  explanation: "sich ergeben bir durumun sonucu olarak ortaya çıkmak anlamına gelir. Ayrıca 'teslim olmak' anlamı da vardır.",
+  usage: "Resmi yazılarda ve günlük dilde çok yaygındır.",
+  pattern: "sich ergeben aus + Dativ",
+  other: "ortaya çıkmak, sonuçlanmak, teslim olmak",
+  synonyms: [
+    ["resultieren", "sonuçlanmak"],
+    ["entstehen", "ortaya çıkmak"],
+    ["folgen", "sonucu olmak"]
+  ],
+  examples: [
+    ["Daraus ergeben sich viele Fragen.", "Bundan birçok soru ortaya çıkıyor."],
+    ["Es hat sich ein Problem ergeben.", "Bir sorun ortaya çıktı."],
+    ["Weitere Informationen ergeben sich aus dem Bericht.", "Ek bilgiler rapordan ortaya çıkmaktadır."],
+    ["Die Lösung ergibt sich von selbst.", "Çözüm kendiliğinden ortaya çıkıyor."],
+    ["Die Soldaten ergaben sich.", "Askerler teslim oldu."]
+  ],
+  tip: "Resmi dilde çok sık kullanılır: Daraus ergibt sich ..."
+},
+
+"sich auszahlen": {
+  explanation: "sich auszahlen yapılan emeğin, yatırımın veya çabanın sonunda karşılığını vermesi anlamına gelir.",
+  usage: "İş, eğitim ve kariyer alanlarında çok yaygındır.",
+  pattern: "sich auszahlen",
+  other: "karşılığını vermek, değmek",
+  synonyms: [
+    ["sich lohnen", "değmek"],
+    ["Erfolg bringen", "başarı getirmek"]
+  ],
+  examples: [
+    ["Die harte Arbeit hat sich ausgezahlt.", "Sıkı çalışma karşılığını verdi."],
+    ["Geduld zahlt sich aus.", "Sabır karşılığını verir."],
+    ["Das wird sich später auszahlen.", "Bu ileride karşılığını verecek."],
+    ["Die Investition hat sich ausgezahlt.", "Yatırım karşılığını verdi."],
+    ["Deutsch zu lernen zahlt sich aus.", "Almanca öğrenmek karşılığını verir."]
+  ],
+  tip: "Çok yaygın ifade: Das zahlt sich aus."
+},
+
+"sich freuen": {
+  explanation: "sich freuen mutlu olmak, sevinmek veya bir şeyi heyecanla beklemek anlamına gelir.",
+  usage: "Günlük konuşmanın en yaygın reflexiv fiillerinden biridir.",
+  pattern: "sich freuen über + Akk. / auf + Akk.",
+  other: "sevinmek, mutlu olmak",
+  synonyms: [
+    ["glücklich sein", "mutlu olmak"],
+    ["begeistert sein", "heyecanlı olmak"]
+  ],
+  examples: [
+    ["Ich freue mich auf den Urlaub.", "Tatile seviniyorum / tatili heyecanla bekliyorum."],
+    ["Wir freuen uns auf deinen Besuch.", "Ziyaretini sabırsızlıkla bekliyoruz."],
+    ["Ich freue mich über die gute Nachricht.", "Güzel habere sevindim."],
+    ["Sie freut sich sehr.", "Çok seviniyor."],
+    ["Freust du dich darauf?", "Bunu heyecanla bekliyor musun?"]
+  ],
+  tip: "auf = gelecekteki olay, über = gerçekleşmiş olay."
+},
+
+"sich ärgern": {
+  explanation: "sich ärgern bir şeye kızmak, sinirlenmek veya canının sıkılması anlamına gelir.",
+  usage: "Günlük konuşmada çok sık kullanılır.",
+  pattern: "sich über + Akk. ärgern",
+  other: "sinirlenmek, kızmak",
+  synonyms: [
+    ["wütend sein", "öfkeli olmak"],
+    ["genervt sein", "sinir olmak"]
+  ],
+  examples: [
+    ["Ich ärgere mich über den Fehler.", "Hataya sinirleniyorum."],
+    ["Ärgere dich nicht.", "Canını sıkma."],
+    ["Er ärgert sich über das Wetter.", "Havaya kızıyor."],
+    ["Warum ärgerst du dich?", "Neden sinirleniyorsun?"],
+    ["Sie hat sich sehr geärgert.", "Çok sinirlendi."]
+  ],
+  tip: "Çok yaygın kalıp: sich über etwas ärgern."
+},
+
+"sich beruhigen": {
+  explanation: "sich beruhigen sakinleşmek veya tekrar huzurlu hale gelmek anlamına gelir.",
+  usage: "Tartışmalar ve stresli durumlarda sık kullanılır.",
+  pattern: "sich beruhigen",
+  other: "sakinleşmek",
+  synonyms: [
+    ["ruhig werden", "sakinleşmek"],
+    ["entspannen", "rahatlamak"]
+  ],
+  examples: [
+    ["Beruhige dich bitte.", "Lütfen sakinleş."],
+    ["Nach einiger Zeit beruhigte er sich.", "Bir süre sonra sakinleşti."],
+    ["Das Kind hat sich beruhigt.", "Çocuk sakinleşti."],
+    ["Ich muss mich erst beruhigen.", "Önce sakinleşmem gerekiyor."],
+    ["Die Situation hat sich beruhigt.", "Durum sakinleşti."]
+  ],
+  tip: "Çok kullanılan emir cümlesi: Beruhige dich!"
+},
+
+"sich sorgen": {
+  explanation: "sich sorgen bir kişi veya durum hakkında endişe etmek anlamına gelir.",
+  usage: "Aile ve sağlık konularında çok yaygındır.",
+  pattern: "sich um + Akk. sorgen",
+  other: "endişelenmek, kaygılanmak",
+  synonyms: [
+    ["sich kümmern", "ilgilenmek"],
+    ["besorgt sein", "endişeli olmak"]
+  ],
+  examples: [
+    ["Ich sorge mich um meine Familie.", "Ailem için endişeleniyorum."],
+    ["Mach dir keine Sorgen.", "Endişelenme."],
+    ["Sie sorgt sich um ihre Kinder.", "Çocukları için endişeleniyor."],
+    ["Wir sorgen uns um seine Gesundheit.", "Sağlığı için endişeleniyoruz."],
+    ["Warum sorgst du dich?", "Neden endişeleniyorsun?"]
+  ],
+  tip: "Çok yaygın ifade: Mach dir keine Sorgen."
+},
+
+"sich entspannen": {
+  explanation: "sich entspannen dinlenmek, rahatlamak ve stresten uzaklaşmak anlamına gelir.",
+  usage: "Günlük hayatta ve sağlık konularında çok kullanılır.",
+  pattern: "sich entspannen",
+  other: "rahatlamak, dinlenmek",
+  synonyms: [
+    ["ausruhen", "dinlenmek"],
+    ["abschalten", "rahatlamak"]
+  ],
+  examples: [
+    ["Ich entspanne mich am Wochenende.", "Hafta sonu dinleniyorum."],
+    ["Du solltest dich entspannen.", "Rahatlamalısın."],
+    ["Nach der Arbeit entspanne ich mich.", "İşten sonra dinleniyorum."],
+    ["Sie entspannt sich beim Lesen.", "Kitap okuyarak rahatlıyor."],
+    ["Wir wollen uns etwas entspannen.", "Biraz rahatlamak istiyoruz."]
+  ],
+  tip: "Wellness ve sağlık konularında çok sık geçer."
+},
+
+"sich langweilen": {
+  explanation: "sich langweilen yapılacak ilginç bir şey olmadığı için sıkılmak anlamına gelir.",
+  usage: "Günlük konuşmada oldukça yaygındır.",
+  pattern: "sich langweilen",
+  other: "sıkılmak",
+  synonyms: [
+    ["keine Beschäftigung haben", "oyalanacak bir şey bulamamak"],
+    ["gelangweilt sein", "sıkılmış olmak"]
+  ],
+  examples: [
+    ["Ich langweile mich.", "Sıkılıyorum."],
+    ["Langweilst du dich?", "Sıkılıyor musun?"],
+    ["Die Kinder langweilen sich schnell.", "Çocuklar çabuk sıkılıyor."],
+    ["Mir ist langweilig.", "Canım sıkılıyor."],
+    ["Wir haben uns den ganzen Tag gelangweilt.", "Bütün gün sıkıldık."]
+  ],
+  tip: "Günlük konuşmada çoğu zaman 'Mir ist langweilig.' daha sık kullanılır."
+},
+
+"sich wundern": {
+  explanation: "sich wundern bir şeye şaşırmak veya hayret etmek anlamına gelir.",
+  usage: "Günlük konuşmada çok yaygındır.",
+  pattern: "sich über + Akk. wundern",
+  other: "şaşırmak, hayret etmek",
+  synonyms: [
+    ["staunen", "şaşırmak"],
+    ["überrascht sein", "şaşırmış olmak"]
+  ],
+  examples: [
+    ["Ich wundere mich über seine Antwort.", "Cevabına şaşırıyorum."],
+    ["Wunderst du dich darüber?", "Buna şaşırıyor musun?"],
+    ["Niemand wunderte sich darüber.", "Kimse buna şaşırmadı."],
+    ["Ich habe mich sehr gewundert.", "Çok şaşırdım."],
+    ["Darüber muss man sich nicht wundern.", "Buna şaşırmamak gerekir."]
+  ],
+  tip: "Çok yaygın kalıp: sich über etwas wundern."
+},
+
+
+"sich schämen": {
+  explanation: "sich schämen yaptığı bir şeyden, bir durumdan veya bir hatadan dolayı utanmak anlamına gelir.",
+  usage: "Günlük konuşmada ve duygularla ilgili ifadelerde sık kullanılır.",
+  pattern: "sich für etw. schämen",
+  other: "utanmak",
+  synonyms: [
+    ["verlegen sein", "mahcup olmak"],
+    ["sich genieren", "utanmak"]
+  ],
+  examples: [
+    ["Ich schäme mich für meinen Fehler.", "Hatamdan dolayı utanıyorum."],
+    ["Du musst dich nicht schämen.", "Utanmana gerek yok."],
+    ["Er schämt sich für sein Verhalten.", "Davranışından utanıyor."],
+    ["Sie schämte sich sehr.", "Çok utandı."],
+    ["Wofür schämst du dich?", "Neden utanıyorsun?"]
+  ],
+  tip: "Çok yaygın kalıp: sich für etwas schämen."
+},
+
+"sich erinnern": {
+  explanation: "sich erinnern geçmişte yaşanan bir olayı, bilgiyi veya kişiyi hatırlamak anlamına gelir.",
+  usage: "Günlük konuşmada çok sık kullanılır.",
+  pattern: "sich an etw./jdn. erinnern",
+  other: "hatırlamak",
+  synonyms: [
+    ["gedenken", "anımsamak"],
+    ["nicht vergessen", "unutmamak"]
+  ],
+  examples: [
+    ["Ich erinnere mich an unsere Reise.", "Seyahatimizi hatırlıyorum."],
+    ["Kannst du dich daran erinnern?", "Bunu hatırlayabiliyor musun?"],
+    ["Ich erinnere mich nicht mehr.", "Artık hatırlamıyorum."],
+    ["Sie erinnert sich an ihre Kindheit.", "Çocukluğunu hatırlıyor."],
+    ["Daran kann ich mich gut erinnern.", "Bunu iyi hatırlıyorum."]
+  ],
+  tip: "Dikkat: sich an + Akkusativ erinnern."
+},
+
+"sich beeilen": {
+  explanation: "sich beeilen daha hızlı hareket etmek veya acele etmek anlamına gelir.",
+  usage: "Günlük konuşmanın en yaygın reflexiv fiillerinden biridir.",
+  pattern: "sich beeilen",
+  other: "acele etmek",
+  synonyms: [
+    ["eilen", "acele etmek"],
+    ["schnell machen", "çabuk yapmak"]
+  ],
+  examples: [
+    ["Beeil dich!", "Acele et!"],
+    ["Wir müssen uns beeilen.", "Acele etmemiz gerekiyor."],
+    ["Ich habe mich sehr beeilt.", "Çok acele ettim."],
+    ["Wenn du dich nicht beeilst, verpasst du den Bus.", "Acele etmezsen otobüsü kaçırırsın."],
+    ["Sie beeilte sich zur Arbeit.", "İşe yetişmek için acele etti."]
+  ],
+  tip: "Çok yaygın emir cümlesi: Beeil dich!"
+},
+
+"sich verspäten": {
+  explanation: "sich verspäten planlanan zamandan daha geç kalmak anlamına gelir.",
+  usage: "İş, okul ve randevularda çok sık kullanılır.",
+  pattern: "sich verspäten",
+  other: "gecikmek",
+  synonyms: [
+    ["zu spät kommen", "geç kalmak"],
+    ["Verzögerung haben", "gecikme yaşamak"]
+  ],
+  examples: [
+    ["Ich verspäte mich um zehn Minuten.", "On dakika gecikeceğim."],
+    ["Der Zug verspätet sich.", "Tren gecikiyor."],
+    ["Entschuldigung, ich habe mich verspätet.", "Özür dilerim, geciktim."],
+    ["Sie verspätet sich wegen des Verkehrs.", "Trafik nedeniyle gecikiyor."],
+    ["Wir werden uns etwas verspäten.", "Biraz gecikeceğiz."]
+  ],
+  tip: "Almanya'da çok kullanılan ifade: Ich verspäte mich."
+},
+
+"sich treffen": {
+  explanation: "sich treffen iki veya daha fazla kişinin buluşması anlamına gelir.",
+  usage: "Arkadaşlar, aile ve iş görüşmeleri için çok yaygındır.",
+  pattern: "sich mit jdm. treffen",
+  other: "buluşmak",
+  synonyms: [
+    ["zusammenkommen", "bir araya gelmek"],
+    ["sich sehen", "görüşmek"]
+  ],
+  examples: [
+    ["Ich treffe mich morgen mit Freunden.", "Yarın arkadaşlarımla buluşuyorum."],
+    ["Wann treffen wir uns?", "Ne zaman buluşuyoruz?"],
+    ["Wir haben uns im Café getroffen.", "Kafede buluştuk."],
+    ["Sie trifft sich oft mit ihrer Schwester.", "Kız kardeşiyle sık sık buluşuyor."],
+    ["Lass uns treffen.", "Buluşalım."]
+  ],
+  tip: "En yaygın kalıp: sich mit jemandem treffen."
+},
+
+"sich verabreden": {
+  explanation: "sich verabreden önceden buluşmak için sözleşmek veya randevulaşmak anlamına gelir.",
+  usage: "Arkadaşlar ve tanıdıklar arasında sık kullanılır.",
+  pattern: "sich mit jdm. verabreden",
+  other: "randevulaşmak",
+  synonyms: [
+    ["einen Termin vereinbaren", "randevu ayarlamak"],
+    ["sich treffen", "buluşmak"]
+  ],
+  examples: [
+    ["Wir haben uns für morgen verabredet.", "Yarın için sözleştik."],
+    ["Ich bin mit Freunden verabredet.", "Arkadaşlarımla sözleştim."],
+    ["Sie haben sich im Restaurant verabredet.", "Restoranda buluşmak üzere sözleştiler."],
+    ["Mit wem bist du verabredet?", "Kiminle buluşmak üzere sözleştin?"],
+    ["Lass uns für nächste Woche verabreden.", "Gelecek hafta için sözleşelim."]
+  ],
+  tip: "verabredet sein = buluşmak üzere sözleşmiş olmak."
+},
+
+"sich verabschieden": {
+  explanation: "sich verabschieden ayrılırken vedalaşmak anlamına gelir.",
+  usage: "Resmi ve günlük ortamlarda çok yaygındır.",
+  pattern: "sich von jdm. verabschieden",
+  other: "vedalaşmak",
+  synonyms: [
+    ["Auf Wiedersehen sagen", "veda etmek"],
+    ["Abschied nehmen", "veda etmek"]
+  ],
+  examples: [
+    ["Ich verabschiede mich jetzt.", "Ben artık ayrılıyorum."],
+    ["Er verabschiedete sich von seinen Kollegen.", "Meslektaşlarıyla vedalaştı."],
+    ["Wir müssen uns verabschieden.", "Vedalaşmamız gerekiyor."],
+    ["Sie hat sich herzlich verabschiedet.", "İçten bir şekilde vedalaştı."],
+    ["Ohne sich zu verabschieden ging er weg.", "Vedalaşmadan gitti."]
+  ],
+  tip: "Çok yaygın kalıp: sich von jemandem verabschieden."
+},
+
+"sich entschuldigen": {
+  explanation: "sich entschuldigen yaptığı bir hata veya rahatsızlıktan dolayı özür dilemek anlamına gelir.",
+  usage: "Günlük hayatta ve iş ortamında çok sık kullanılır.",
+  pattern: "sich bei jdm. für etw. entschuldigen",
+  other: "özür dilemek",
+  synonyms: [
+    ["um Verzeihung bitten", "af dilemek"],
+    ["Bedauern ausdrücken", "üzüntü belirtmek"]
+  ],
+  examples: [
+    ["Ich entschuldige mich für die Verspätung.", "Gecikme için özür diliyorum."],
+    ["Er hat sich entschuldigt.", "Özür diledi."],
+    ["Bitte entschuldigen Sie mich.", "Lütfen beni mazur görün."],
+    ["Sie entschuldigte sich bei ihrer Kollegin.", "Meslektaşından özür diledi."],
+    ["Ich möchte mich dafür entschuldigen.", "Bunun için özür dilemek istiyorum."]
+  ],
+  tip: "E-postalarda çok sık kullanılır."
+},
+
+"sich unterhalten": {
+  explanation: "sich unterhalten iki veya daha fazla kişinin sohbet etmesi veya konuşması anlamına gelir.",
+  usage: "Günlük konuşmada çok yaygındır.",
+  pattern: "sich mit jdm. unterhalten",
+  other: "sohbet etmek",
+  synonyms: [
+    ["sprechen", "konuşmak"],
+    ["plaudern", "sohbet etmek"]
+  ],
+  examples: [
+    ["Wir haben uns lange unterhalten.", "Uzun süre sohbet ettik."],
+    ["Ich unterhalte mich gern mit dir.", "Seninle sohbet etmeyi seviyorum."],
+    ["Sie unterhalten sich über Politik.", "Siyaset hakkında konuşuyorlar."],
+    ["Kann ich mich kurz mit Ihnen unterhalten?", "Sizinle kısa bir konuşabilir miyim?"],
+    ["Die beiden unterhalten sich oft.", "İkisi sık sık sohbet ediyor."]
+  ],
+  tip: "Dikkat: sich mit jemandem über etwas unterhalten."
+},
+
+"sich streiten": {
+  explanation: "sich streiten iki veya daha fazla kişinin tartışması veya kavga etmesi anlamına gelir.",
+  usage: "Aile, arkadaş ve iş ortamlarında sık kullanılır.",
+  pattern: "sich mit jdm. streiten",
+  other: "tartışmak, kavga etmek",
+  synonyms: [
+    ["diskutieren", "tartışmak"],
+    ["Auseinandersetzungen haben", "anlaşmazlık yaşamak"]
+  ],
+  examples: [
+    ["Ich streite mich oft mit meinem Bruder.", "Kardeşimle sık sık tartışıyorum."],
+    ["Warum streitet ihr euch?", "Neden tartışıyorsunuz?"],
+    ["Die Kinder haben sich gestritten.", "Çocuklar kavga etti."],
+    ["Wir wollen uns nicht streiten.", "Tartışmak istemiyoruz."],
+    ["Sie streiten sich über Geld.", "Para yüzünden tartışıyorlar."]
+  ],
+  tip: "Çok yaygın kalıp: sich mit jemandem über etwas streiten."
+},
+
+
+"sich einigen": {
+  explanation: "sich einigen farklı görüşlere sahip kişilerin ortak bir karara varması veya uzlaşması anlamına gelir.",
+  usage: "İş görüşmeleri, aile içi kararlar ve resmi müzakerelerde çok sık kullanılır.",
+  pattern: "sich auf etw. einigen",
+  other: "anlaşmak, uzlaşmak",
+  synonyms: [
+    ["übereinkommen", "anlaşmaya varmak"],
+    ["einen Kompromiss finden", "uzlaşmak"],
+    ["zustimmen", "anlaşmak"]
+  ],
+  examples: [
+    ["Wir haben uns auf einen Termin geeinigt.", "Bir tarih üzerinde anlaştık."],
+    ["Könnt ihr euch einigen?", "Anlaşabiliyor musunuz?"],
+    ["Die Parteien haben sich geeinigt.", "Taraflar anlaşmaya vardı."],
+    ["Nach langen Gesprächen einigten wir uns.", "Uzun görüşmelerden sonra anlaştık."],
+    ["Wir konnten uns schnell einigen.", "Hızlıca anlaşabildik."]
+  ],
+  tip: "Çok yaygın kalıp: sich auf etwas einigen."
+},
+
+"sich weigern": {
+  explanation: "sich weigern bir şeyi yapmayı reddetmek veya bilinçli olarak kabul etmemek anlamına gelir.",
+  usage: "Resmi ve günlük dilde sık kullanılır.",
+  pattern: "sich weigern, etwas zu tun",
+  other: "reddetmek, karşı çıkmak",
+  synonyms: [
+    ["ablehnen", "reddetmek"],
+    ["sich sträuben", "direnmek"],
+    ["verweigern", "reddetmek"]
+  ],
+  examples: [
+    ["Er weigert sich zu helfen.", "Yardım etmeyi reddediyor."],
+    ["Ich weigere mich, das zu akzeptieren.", "Bunu kabul etmeyi reddediyorum."],
+    ["Sie weigerte sich zu antworten.", "Cevap vermeyi reddetti."],
+    ["Warum weigerst du dich?", "Neden reddediyorsun?"],
+    ["Er hat sich geweigert mitzukommen.", "Gelmeyi reddetti."]
+  ],
+  tip: "Çok yaygın yapı: sich weigern + zu + Infinitiv."
+},
+
+"sich bemühen": {
+  explanation: "sich bemühen bir hedefe ulaşmak veya bir işi başarmak için çaba göstermek anlamına gelir.",
+  usage: "İş başvurularında ve resmi yazışmalarda çok sık kullanılır.",
+  pattern: "sich um etw. bemühen",
+  other: "çabalamak, gayret etmek",
+  synonyms: [
+    ["sich anstrengen", "çabalamak"],
+    ["versuchen", "denemek"],
+    ["Einsatz zeigen", "çaba göstermek"]
+  ],
+  examples: [
+    ["Ich bemühe mich um eine Lösung.", "Bir çözüm bulmak için çabalıyorum."],
+    ["Er bemüht sich sehr.", "Çok çaba gösteriyor."],
+    ["Wir bemühen uns um eine schnelle Antwort.", "Hızlı bir cevap için çabalıyoruz."],
+    ["Sie hat sich immer bemüht.", "Her zaman çaba gösterdi."],
+    ["Ich werde mich darum bemühen.", "Bunun için çaba göstereceğim."]
+  ],
+  tip: "Resmi e-postalarda çok kullanılır: Wir bemühen uns ..."
+},
+
+"sich verhalten": {
+  explanation: "sich verhalten bir kişinin belirli bir durumda nasıl davrandığını ifade eder.",
+  usage: "Eğitim, iş hayatı ve günlük konuşmada yaygındır.",
+  pattern: "sich verhalten",
+  other: "davranmak",
+  synonyms: [
+    ["handeln", "davranmak"],
+    ["auftreten", "davranış sergilemek"]
+  ],
+  examples: [
+    ["Du hast dich richtig verhalten.", "Doğru davrandın."],
+    ["Wie soll ich mich verhalten?", "Nasıl davranmalıyım?"],
+    ["Er verhielt sich ruhig.", "Sakin davrandı."],
+    ["Die Kinder haben sich gut verhalten.", "Çocuklar iyi davrandı."],
+    ["Sie verhält sich immer höflich.", "Her zaman nazik davranıyor."]
+  ],
+  tip: "Çok yaygın soru: Wie soll ich mich verhalten?"
+},
+
+"vermuten": {
+  explanation: "vermuten kesin bilgi olmadan bir şeyin doğru olduğunu düşünmek veya tahmin etmek anlamına gelir.",
+  usage: "Günlük konuşmada ve resmi dilde sık kullanılır.",
+  pattern: "etw. vermuten",
+  other: "tahmin etmek, sanmak",
+  synonyms: [
+    ["annehmen", "varsaymak"],
+    ["glauben", "inanmak"],
+    ["denken", "düşünmek"]
+  ],
+  examples: [
+    ["Ich vermute, dass er krank ist.", "Onun hasta olduğunu tahmin ediyorum."],
+    ["Was vermutest du?", "Ne tahmin ediyorsun?"],
+    ["Die Polizei vermutet Brandstiftung.", "Polis kundaklama şüphesi taşıyor."],
+    ["Ich vermute das schon lange.", "Bunu uzun zamandır tahmin ediyorum."],
+    ["Man vermutet einen Zusammenhang.", "Bir bağlantı olduğu düşünülüyor."]
+  ],
+  tip: "Resmi dilde glauben yerine sık kullanılır."
+},
+
+"raten": {
+  explanation: "raten tavsiyede bulunmak veya tahminde bulunmak anlamına gelir. Günlük dilde en yaygın anlamı 'tavsiye etmek'tir.",
+  usage: "Doktor, öğretmen ve danışman tavsiyelerinde çok kullanılır.",
+  pattern: "jdm. zu etw. raten",
+  other: "tavsiye etmek, tahmin etmek",
+  synonyms: [
+    ["empfehlen", "tavsiye etmek"],
+    ["vorschlagen", "önermek"]
+  ],
+  examples: [
+    ["Ich rate dir zu mehr Geduld.", "Sana daha fazla sabır tavsiye ediyorum."],
+    ["Was rätst du mir?", "Bana ne tavsiye ediyorsun?"],
+    ["Der Arzt rät zum Sport.", "Doktor spor tavsiye ediyor."],
+    ["Ich würde davon abraten.", "Bunu tavsiye etmem."],
+    ["Kannst du die Antwort raten?", "Cevabı tahmin edebilir misin?"]
+  ],
+  tip: "Dativ ister: Ich rate dir."
+},
+
+"annehmen": {
+  explanation: "annehmen bir teklifi, daveti veya başvuruyu kabul etmek anlamına gelir. Ayrıca varsaymak anlamı da vardır.",
+  usage: "İş hayatında ve günlük konuşmada çok yaygındır.",
+  pattern: "etw. annehmen",
+  other: "kabul etmek, varsaymak",
+  synonyms: [
+    ["akzeptieren", "kabul etmek"],
+    ["zustimmen", "onaylamak"],
+    ["vermuten", "varsaymak"]
+  ],
+  examples: [
+    ["Ich nehme dein Angebot an.", "Teklifini kabul ediyorum."],
+    ["Die Schule hat ihn angenommen.", "Okul onu kabul etti."],
+    ["Kann ich das Paket annehmen?", "Paketi teslim alabilir miyim?"],
+    ["Wir nehmen an, dass alles stimmt.", "Her şeyin doğru olduğunu varsayıyoruz."],
+    ["Er hat die Einladung angenommen.", "Daveti kabul etti."]
+  ],
+  tip: "Çok yaygın yapı: Wir nehmen an, dass ..."
+},
+
+"übernehmen": {
+  explanation: "übernehmen bir görevi, sorumluluğu veya işi devralmak ve üstlenmek anlamına gelir.",
+  usage: "İş hayatında son derece sık kullanılır.",
+  pattern: "etw. übernehmen",
+  other: "üstlenmek, devralmak",
+  synonyms: [
+    ["verantworten", "sorumluluğunu almak"],
+    ["fortführen", "devralıp sürdürmek"],
+    ["annehmen", "üstlenmek"]
+  ],
+  examples: [
+    ["Ich übernehme die Verantwortung.", "Sorumluluğu üstleniyorum."],
+    ["Kannst du diese Aufgabe übernehmen?", "Bu görevi üstlenebilir misin?"],
+    ["Er hat die Firma übernommen.", "Şirketi devraldı."],
+    ["Wer übernimmt die Kosten?", "Masrafları kim karşılayacak?"],
+    ["Sie übernimmt die Leitung des Projekts.", "Projenin yönetimini devralıyor."]
+  ],
+  tip: "Sehr häufig: Verantwortung übernehmen."
+},
+
+"hassen": {
+  explanation: "hassen bir kişiden veya şeyden çok güçlü şekilde hoşlanmamak, nefret etmek anlamına gelir.",
+  usage: "Günlük konuşmada güçlü duyguları ifade etmek için kullanılır.",
+  pattern: "jdn./etw. hassen",
+  other: "nefret etmek",
+  synonyms: [
+    ["nicht ausstehen können", "hiç tahammül edememek"],
+    ["verabscheuen", "nefret etmek"]
+  ],
+  examples: [
+    ["Ich hasse Lügen.", "Yalandan nefret ederim."],
+    ["Er hasst kaltes Wetter.", "Soğuk havadan nefret ediyor."],
+    ["Warum hasst du das?", "Bundan neden nefret ediyorsun?"],
+    ["Sie hasst es zu warten.", "Beklemekten nefret ediyor."],
+    ["Viele Menschen hassen Ungerechtigkeit.", "Birçok insan adaletsizlikten nefret eder."]
+  ],
+  tip: "Güçlü bir kelimedir; mögen'in tam tersidir."
+},
+
+"vermissen": {
+  explanation: "vermissen uzun süredir görmediğin veya yanında olmayan bir kişiyi, yeri ya da şeyi özlemek anlamına gelir.",
+  usage: "Aile ve arkadaşlarla ilgili konuşmalarda çok yaygındır.",
+  pattern: "jdn./etw. vermissen",
+  other: "özlemek",
+  synonyms: [
+    ["sich sehnen nach", "özlem duymak"],
+    ["verlangen nach", "özlemek"]
+  ],
+  examples: [
+    ["Ich vermisse meine Familie.", "Ailemi özlüyorum."],
+    ["Wir vermissen dich.", "Seni özlüyoruz."],
+    ["Vermisst du die Türkei?", "Türkiye'yi özlüyor musun?"],
+    ["Er vermisst seine Freunde.", "Arkadaşlarını özlüyor."],
+    ["Ich habe euch sehr vermisst.", "Sizi çok özledim."]
+  ],
+  tip: "Almancada en sık kullanılan duygu fiillerinden biridir."
+},
+
+"genießen": {
+  explanation: "genießen bir şeyden keyif almak, tadını çıkarmak veya hoş bir deneyimi bilinçli şekilde yaşamak anlamına gelir.",
+  usage: "Yemek, tatil, boş zaman ve güzel anlar için çok sık kullanılır.",
+  pattern: "etw. genießen",
+  other: "keyfini çıkarmak",
+  synonyms: [
+    ["Freude haben an", "keyif almak"],
+    ["auskosten", "tadını çıkarmak"],
+    ["sich erfreuen an", "keyif almak"]
+  ],
+  examples: [
+    ["Ich genieße das schöne Wetter.", "Güzel havanın tadını çıkarıyorum."],
+    ["Genieß deinen Urlaub!", "Tatilinin tadını çıkar!"],
+    ["Wir genießen die Ruhe.", "Sessizliğin tadını çıkarıyoruz."],
+    ["Sie genießt ihre Freizeit.", "Boş zamanının tadını çıkarıyor."],
+    ["Ich genieße jede Minute mit meiner Familie.", "Ailemle geçirdiğim her dakikanın tadını çıkarıyorum."]
+  ],
+  tip: "Çok yaygın kalıp: das Leben genießen."
+},
+
+"begegnen": {
+  explanation: "begegnen bir kişiyle veya durumla karşılaşmak anlamına gelir. Dativ ile kullanılır.",
+  usage: "Günlük konuşmada ve yazı dilinde sık kullanılır.",
+  pattern: "jdm. begegnen",
+  other: "karşılaşmak",
+  synonyms: [
+    ["treffen", "karşılaşmak"],
+    ["antreffen", "rastlamak"],
+    ["über den Weg laufen", "karşılaşmak"]
+  ],
+  examples: [
+    ["Ich bin ihm gestern begegnet.", "Dün onunla karşılaştım."],
+    ["Wir begegnen uns oft im Supermarkt.", "Süpermarkette sık sık karşılaşıyoruz."],
+    ["Bist du ihm schon begegnet?", "Onunla hiç karşılaştın mı?"],
+    ["Sie begegnete ihrem alten Lehrer.", "Eski öğretmeniyle karşılaştı."],
+    ["Man begegnet vielen Menschen im Leben.", "İnsan hayatta birçok kişiyle karşılaşır."]
+  ],
+  tip: "Dativ ister: Ich begegne dir."
+},
+
+"missfallen": {
+  explanation: "missfallen bir kişinin hoşuna gitmemek veya beğenilmemek anlamına gelir. Günlük dilde daha çok gefallen'in olumsuzu olarak kullanılır.",
+  usage: "Daha çok yazı dilinde ve resmi dilde görülür.",
+  pattern: "jdm. missfallen",
+  other: "hoşuna gitmemek",
+  synonyms: [
+    ["nicht gefallen", "hoşuna gitmemek"],
+    ["ablehnen", "beğenmemek"]
+  ],
+  examples: [
+    ["Sein Verhalten missfällt mir.", "Davranışı hoşuma gitmiyor."],
+    ["Der Vorschlag missfiel vielen Leuten.", "Öneri birçok kişinin hoşuna gitmedi."],
+    ["Was missfällt Ihnen daran?", "Bunun nesi hoşunuza gitmiyor?"],
+    ["Die Entscheidung missfällt ihm.", "Karar onun hoşuna gitmiyor."],
+    ["Mir missfällt diese Entwicklung.", "Bu gelişme hoşuma gitmiyor."]
+  ],
+  tip: "Günlük konuşmada çoğu zaman 'Das gefällt mir nicht.' tercih edilir."
+},
+
+"leid tun": {
+  explanation: "leid tun bir kişi adına üzülmek veya yapılan bir şeyden dolayı pişmanlık belirtmek anlamına gelir.",
+  usage: "Özür dileme ve üzüntü bildirme durumlarında çok sık kullanılır.",
+  pattern: "Es tut jdm. leid",
+  other: "üzülmek, pişman olmak",
+  synonyms: [
+    ["bedauern", "üzülmek"],
+    ["sich entschuldigen", "özür dilemek"]
+  ],
+  examples: [
+    ["Es tut mir leid.", "Üzgünüm."],
+    ["Das tut mir wirklich leid.", "Buna gerçekten üzüldüm."],
+    ["Es tut uns leid, dass das passiert ist.", "Bunun yaşanmasına üzüldük."],
+    ["Tut es dir leid?", "Pişman mısın?"],
+    ["Es tut mir leid für die Verspätung.", "Gecikme için üzgünüm."]
+  ],
+  tip: "Almancanın en sık kullanılan kalıplarından biridir."
+},
+
+"weh tun": {
+  explanation: "weh tun bir yerin ağrıması veya canının yanması anlamına gelir.",
+  usage: "Doktor görüşmelerinde ve günlük konuşmada çok sık kullanılır.",
+  pattern: "jdm. tut etw. weh",
+  other: "acımak, canı yanmak",
+  synonyms: [
+    ["schmerzen", "ağrımak"],
+    ["wehtun", "acı vermek"]
+  ],
+  examples: [
+    ["Mein Kopf tut weh.", "Başım ağrıyor."],
+    ["Tut dein Rücken weh?", "Sırtın ağrıyor mu?"],
+    ["Mein Bein tut noch weh.", "Bacağım hâlâ ağrıyor."],
+    ["Wo tut es weh?", "Neren ağrıyor?"],
+    ["Nach dem Training taten mir die Muskeln weh.", "Antrenmandan sonra kaslarım ağrıdı."]
+  ],
+  tip: "Doktorların en sık sorduğu sorulardan biri: Wo tut es weh?"
+},
+
+"stinken": {
+  explanation: "stinken kötü kokmak veya çok kötü bir koku yaymak anlamına gelir.",
+  usage: "Günlük konuşmada oldukça yaygındır.",
+  pattern: "stinken",
+  other: "kötü kokmak",
+  synonyms: [
+    ["schlecht riechen", "kötü kokmak"],
+    ["müffeln", "kokmak"]
+  ],
+  examples: [
+    ["Der Müll stinkt.", "Çöp kötü kokuyor."],
+    ["Hier stinkt es.", "Burada kötü bir koku var."],
+    ["Die Schuhe stinken.", "Ayakkabılar kötü kokuyor."],
+    ["Etwas stinkt hier gewaltig.", "Burada ciddi şekilde kötü kokan bir şey var."],
+    ["Warum stinkt das so?", "Bu neden böyle kokuyor?"]
+  ],
+  tip: "Olumsuz bir fiildir; olumlu karşılığı riechen'dir."
+},
+
+"gelingen": {
+  explanation: "gelingen bir işin başarılı olması veya istenildiği gibi sonuçlanması anlamına gelir. Dativ ile kullanılır.",
+  usage: "Başarı anlatırken çok kullanılır.",
+  pattern: "jdm. gelingt etw.",
+  other: "başarılı olmak",
+  synonyms: [
+    ["klappen", "başarmak"],
+    ["funktionieren", "işe yaramak"],
+    ["Erfolg haben", "başarı elde etmek"]
+  ],
+  examples: [
+    ["Die Prüfung ist mir gelungen.", "Sınavım başarılı geçti."],
+    ["Es ist ihm gelungen.", "Başardı."],
+    ["Der Kuchen ist gut gelungen.", "Kek güzel oldu."],
+    ["Wird dir das gelingen?", "Bunu başarabilecek misin?"],
+    ["Das Projekt ist gelungen.", "Proje başarılı oldu."]
+  ],
+  tip: "Dativ ister: Mir gelingt das."
+},
+
+"misslingen": {
+  explanation: "misslingen bir işin başarısız olması veya istenildiği gibi sonuçlanmaması anlamına gelir.",
+  usage: "gelingen fiilinin karşıtıdır.",
+  pattern: "jdm. misslingt etw.",
+  other: "başarısız olmak",
+  synonyms: [
+    ["scheitern", "başarısız olmak"],
+    ["nicht gelingen", "başaramamak"]
+  ],
+  examples: [
+    ["Der Versuch ist misslungen.", "Deneme başarısız oldu."],
+    ["Leider ist der Plan misslungen.", "Ne yazık ki plan başarısız oldu."],
+    ["Die Operation ist nicht misslungen.", "Ameliyat başarısız olmadı."],
+    ["Das Experiment misslang.", "Deney başarısız oldu."],
+    ["Ihm ist alles misslungen.", "Her şey başarısız oldu."]
+  ],
+  tip: "Resmi ve yazılı dilde günlük konuşmadan daha sık görülür."
+},
+
+"schaden": {
+  explanation: "schaden bir kişiye veya şeye zarar vermek anlamına gelir. Dativ ile kullanılır.",
+  usage: "Sağlık, çevre ve hukuk konularında çok sık kullanılır.",
+  pattern: "jdm./etw. schaden",
+  other: "zarar vermek",
+  synonyms: [
+    ["beschädigen", "zarar vermek"],
+    ["beeinträchtigen", "olumsuz etkilemek"]
+  ],
+  examples: [
+    ["Rauchen schadet der Gesundheit.", "Sigara sağlığa zarar verir."],
+    ["Das schadet dem Unternehmen.", "Bu şirkete zarar verir."],
+    ["Zu wenig Schlaf schadet dir.", "Az uyku sana zarar verir."],
+    ["Hat das jemandem geschadet?", "Bu birine zarar verdi mi?"],
+    ["Stress schadet dem Körper.", "Stres vücuda zarar verir."]
+  ],
+  tip: "Dativ ister: Das schadet mir."
+},
+
+"drohen": {
+  explanation: "drohen birini tehdit etmek veya kötü bir sonucun meydana gelme ihtimalini belirtmek anlamına gelir.",
+  usage: "Günlük dilde ve haberlerde sık kullanılır.",
+  pattern: "jdm. drohen / es droht + Nomen",
+  other: "tehdit etmek",
+  synonyms: [
+    ["bedrohen", "tehdit etmek"],
+    ["warnen", "uyarmak"]
+  ],
+  examples: [
+    ["Er droht seinem Kollegen.", "Meslektaşını tehdit ediyor."],
+    ["Man drohte ihm mit einer Anzeige.", "Onu şikâyet etmekle tehdit ettiler."],
+    ["Es droht Gefahr.", "Tehlike var."],
+    ["Der Sturm droht stärker zu werden.", "Fırtına güçlenme tehlikesi taşıyor."],
+    ["Warum drohst du mir?", "Beni neden tehdit ediyorsun?"]
+  ],
+  tip: "Dativ ister: Er droht mir."
+},
+
+"dienen": {
+  explanation: "dienen bir amaca hizmet etmek, yararlı olmak veya belirli bir işlev görmek anlamına gelir. Dativ ile kullanılır.",
+  usage: "Resmi dilde, iş hayatında ve teknik açıklamalarda sık kullanılır.",
+  pattern: "jdm. / etw. dienen",
+  other: "hizmet etmek, işe yaramak",
+  synonyms: [
+    ["nützen", "yararlı olmak"],
+    ["helfen", "yardımcı olmak"],
+    ["verwendet werden", "kullanılmak"]
+  ],
+  examples: [
+    ["Dieses Werkzeug dient der Sicherheit.", "Bu araç güvenliğe hizmet eder."],
+    ["Das dient einem guten Zweck.", "Bu iyi bir amaca hizmet ediyor."],
+    ["Wozu dient das?", "Bu ne işe yarıyor?"],
+    ["Die Maßnahme dient dem Schutz der Kinder.", "Bu önlem çocukların korunmasına hizmet ediyor."],
+    ["Das Dokument dient als Nachweis.", "Bu belge kanıt olarak kullanılır."]
+  ],
+  tip: "Çok yaygın kalıp: dienen als = olarak hizmet etmek."
+},
+
+"verzeihen": {
+  explanation: "verzeihen bir kişinin yaptığı hatayı affetmek veya bağışlamak anlamına gelir. Dativ ile kullanılır.",
+  usage: "Günlük konuşmada ve duygusal konularda yaygındır.",
+  pattern: "jdm. etw. verzeihen",
+  other: "affetmek, bağışlamak",
+  synonyms: [
+    ["vergeben", "affetmek"],
+    ["entschuldigen", "bağışlamak"]
+  ],
+  examples: [
+    ["Kannst du mir verzeihen?", "Beni affedebilir misin?"],
+    ["Ich verzeihe dir diesen Fehler.", "Bu hatanı affediyorum."],
+    ["Sie konnte ihm nicht verzeihen.", "Onu affedemedi."],
+    ["Bitte verzeihen Sie mir.", "Lütfen beni affedin."],
+    ["Er hat ihr alles verziehen.", "Onu her şey için affetti."]
+  ],
+  tip: "Dativ ister: Ich verzeihe dir."
+},
+
+"nahekommen": {
+  explanation: "nahekommen bir hedefe, kişiye veya sonuca yaklaşmak anlamına gelir. Dativ ile kullanılır.",
+  usage: "Hedefler ve ilişkiler hakkında konuşurken sık kullanılır.",
+  pattern: "jdm./etw. nahekommen",
+  other: "yaklaşmak",
+  synonyms: [
+    ["sich nähern", "yaklaşmak"],
+    ["annähern", "yaklaşmak"]
+  ],
+  examples: [
+    ["Wir kommen unserem Ziel näher.", "Hedefimize yaklaşıyoruz."],
+    ["Er ist der Wahrheit nahegekommen.", "Gerçeğe yaklaştı."],
+    ["Niemand kommt ihm nahe.", "Kimse onun seviyesine yaklaşamıyor."],
+    ["Die Lösung kommt näher.", "Çözüm yaklaşıyor."],
+    ["Sie kommen ihrem Traum Schritt für Schritt näher.", "Hayallerine adım adım yaklaşıyorlar."]
+  ],
+  tip: "Dativ ister: dem Ziel nahekommen."
+},
+
+"entgegenkommen": {
+  explanation: "entgegenkommen birine anlayış göstermek, kolaylık sağlamak veya onun isteğini karşılamak anlamına gelir.",
+  usage: "İş hayatında ve resmi görüşmelerde çok kullanılır.",
+  pattern: "jdm. entgegenkommen",
+  other: "anlayış göstermek, kolaylık sağlamak",
+  synonyms: [
+    ["nachgeben", "ödün vermek"],
+    ["unterstützen", "desteklemek"],
+    ["helfen", "yardımcı olmak"]
+  ],
+  examples: [
+    ["Die Firma kam uns entgegen.", "Şirket bize kolaylık sağladı."],
+    ["Kann man Ihnen entgegenkommen?", "Size yardımcı olunabilir mi?"],
+    ["Der Vermieter ist uns entgegengekommen.", "Ev sahibi bize anlayış gösterdi."],
+    ["Sie kam meinem Wunsch entgegen.", "İsteğimi karşıladı."],
+    ["Vielen Dank für Ihr Entgegenkommen.", "Anlayışınız için çok teşekkür ederim."]
+  ],
+  tip: "Resmi yazışmalarda çok sık geçen isim hali: Entgegenkommen."
+},
+
+"ausweichen": {
+  explanation: "ausweichen bir şeyden kaçınmak, uzak durmak veya yol vermek amacıyla yön değiştirmek anlamına gelir.",
+  usage: "Hem fiziksel hem mecazi anlamda kullanılır.",
+  pattern: "etw. vermeiden / jdm. ausweichen",
+  other: "kaçınmak, sakınmak",
+  synonyms: [
+    ["vermeiden", "kaçınmak"],
+    ["umgehen", "kaçınmak"],
+    ["entgehen", "uzak durmak"]
+  ],
+  examples: [
+    ["Er wich der Frage aus.", "Sorudan kaçındı."],
+    ["Ich weiche Konflikten aus.", "Çatışmalardan kaçınıyorum."],
+    ["Das Auto musste ausweichen.", "Araba manevra yapmak zorunda kaldı."],
+    ["Warum weichst du immer aus?", "Neden sürekli kaçıyorsun?"],
+    ["Sie wich dem Hund aus.", "Köpeğe yol verdi."]
+  ],
+  tip: "Çok yaygın kalıp: einer Frage ausweichen."
+},
+
+"nützen": {
+  explanation: "nützen bir kişiye fayda sağlamak veya yararlı olmak anlamına gelir. Dativ ile kullanılır.",
+  usage: "Resmi dilde nutzen fiiline göre daha sık görülür.",
+  pattern: "jdm. nützen",
+  other: "yararlı olmak, fayda sağlamak",
+  synonyms: [
+    ["helfen", "yardımcı olmak"],
+    ["dienen", "hizmet etmek"],
+    ["von Nutzen sein", "yararlı olmak"]
+  ],
+  examples: [
+    ["Das nützt mir nichts.", "Bunun bana faydası yok."],
+    ["Die Erfahrung wird dir nützen.", "Bu deneyim sana fayda sağlayacak."],
+    ["Was nützt das?", "Bu ne işe yarıyor?"],
+    ["Der Kurs hat mir sehr genützt.", "Kurs bana çok fayda sağladı."],
+    ["Das wird uns später nützen.", "Bu ileride işimize yarayacak."]
+  ],
+  tip: "Çok yaygın ifade: Das nützt nichts."
+},
+
+"unterstützen": {
+  explanation: "unterstützen bir kişiye yardım etmek, destek vermek veya yanında olmak anlamına gelir.",
+  usage: "Aile, eğitim, iş ve sosyal yaşamda çok sık kullanılır.",
+  pattern: "jdn. unterstützen",
+  other: "desteklemek",
+  synonyms: [
+    ["helfen", "yardım etmek"],
+    ["fördern", "desteklemek"],
+    ["beistehen", "yanında olmak"]
+  ],
+  examples: [
+    ["Ich unterstütze dich.", "Seni destekliyorum."],
+    ["Meine Familie unterstützt mich.", "Ailem beni destekliyor."],
+    ["Vielen Dank für Ihre Unterstützung.", "Desteğiniz için çok teşekkür ederim."],
+    ["Die Organisation unterstützt Flüchtlinge.", "Kuruluş mültecileri destekliyor."],
+    ["Wer unterstützt dieses Projekt?", "Bu projeyi kim destekliyor?"]
+  ],
+  tip: "Destek anlamında en sık kullanılan fiillerden biridir."
+},
+
+"loben": {
+  explanation: "loben bir kişiyi yaptığı iyi bir iş veya davranış nedeniyle övmek ve takdir etmek anlamına gelir.",
+  usage: "Eğitim ve iş hayatında çok yaygındır.",
+  pattern: "jdn. loben",
+  other: "övmek, takdir etmek",
+  synonyms: [
+    ["preisen", "övmek"],
+    ["anerkennen", "takdir etmek"],
+    ["würdigen", "değer vermek"]
+  ],
+  examples: [
+    ["Der Lehrer lobt die Schüler.", "Öğretmen öğrencileri övüyor."],
+    ["Sie wurde für ihre Arbeit gelobt.", "Çalışması nedeniyle övüldü."],
+    ["Man sollte Kinder öfter loben.", "Çocukları daha sık övmek gerekir."],
+    ["Der Chef lobte das Team.", "Patron ekibi övdü."],
+    ["Alle haben ihn gelobt.", "Herkes onu övdü."]
+  ],
+  tip: "Lob = övgü, takdir."
+},
+
+"kritisieren": {
+  explanation: "kritisieren bir kişi, karar veya davranış hakkındaki olumsuz görüşleri ifade etmek anlamına gelir.",
+  usage: "Medya, siyaset ve günlük konuşmada çok sık kullanılır.",
+  pattern: "jdn./etw. kritisieren",
+  other: "eleştirmek",
+  synonyms: [
+    ["beanstanden", "eleştirmek"],
+    ["bemängeln", "kusur bulmak"],
+    ["tadeln", "azarlamak"]
+  ],
+  examples: [
+    ["Er kritisiert die Entscheidung.", "Kararı eleştiriyor."],
+    ["Warum kritisierst du mich?", "Beni neden eleştiriyorsun?"],
+    ["Die Regierung wurde kritisiert.", "Hükümet eleştirildi."],
+    ["Sie kritisierte sein Verhalten.", "Davranışını eleştirdi."],
+    ["Man sollte sachlich kritisieren.", "Eleştiriler objektif olmalıdır."]
+  ],
+  tip: "Kritik = eleştiri, kritisieren = eleştirmek."
+},
+
+"warnen": {
+  explanation: "warnen bir kişiyi tehlike, risk veya olumsuz bir durum hakkında uyarmak anlamına gelir.",
+  usage: "Günlük hayatta, sağlık ve güvenlik konularında çok sık kullanılır.",
+  pattern: "jdn. vor etw. warnen",
+  other: "uyarmak",
+  synonyms: [
+    ["mahnen", "uyarmak"],
+    ["hinweisen auf", "dikkat çekmek"],
+    ["alarmieren", "alarm vermek"]
+  ],
+  examples: [
+    ["Ich warne dich vor diesem Fehler.", "Seni bu hata konusunda uyarıyorum."],
+    ["Die Polizei warnt vor Betrügern.", "Polis dolandırıcılara karşı uyarıyor."],
+    ["Man hat uns davor gewarnt.", "Bizi bunun hakkında uyardılar."],
+    ["Der Arzt warnte vor den Risiken.", "Doktor risklere karşı uyardı."],
+    ["Warum hast du mich nicht gewarnt?", "Neden beni uyarmadın?"]
+  ],
+  tip: "Çok yaygın kalıp: vor etwas warnen."
+},
+
+
+"anbieten": {
+  explanation: "anbieten bir kişiye bir şey sunmak, teklif etmek veya hizmet vermek anlamına gelir. Günlük konuşmada ve iş hayatında çok sık kullanılır.",
+  usage: "Alışverişte, iş görüşmelerinde ve günlük konuşmalarda yaygındır.",
+  pattern: "jdm. etw. anbieten",
+  other: "sunmak, teklif etmek",
+  synonyms: [
+    ["vorschlagen", "önermek"],
+    ["offerieren", "sunmak"],
+    ["bereitstellen", "sağlamak"]
+  ],
+  examples: [
+    ["Kann ich Ihnen etwas anbieten?", "Size bir şey ikram edebilir miyim?"],
+    ["Er hat mir seine Hilfe angeboten.", "Bana yardımını teklif etti."],
+    ["Die Firma bietet viele Kurse an.", "Firma birçok kurs sunuyor."],
+    ["Was können Sie anbieten?", "Ne sunabilirsiniz?"],
+    ["Sie bot ihm einen Kaffee an.", "Ona bir kahve ikram etti."]
+  ],
+  tip: "Trennbar fiildir: Ich biete dir Hilfe an."
+},
+
+"erreichen": {
+  explanation: "erreichen bir yere ulaşmak, bir hedefe varmak veya bir kişiye erişmek anlamına gelir.",
+  usage: "Günlük hayatta ve iş yaşamında çok sık kullanılır.",
+  pattern: "etw./jdn. erreichen",
+  other: "ulaşmak, erişmek",
+  synonyms: [
+    ["ankommen", "varmak"],
+    ["gelangen", "ulaşmak"],
+    ["erzielen", "elde etmek"]
+  ],
+  examples: [
+    ["Ich habe mein Ziel erreicht.", "Hedefime ulaştım."],
+    ["Wann erreichen wir Frankfurt?", "Frankfurt'a ne zaman varacağız?"],
+    ["Ich kann ihn telefonisch nicht erreichen.", "Ona telefonla ulaşamıyorum."],
+    ["Sie erreichte ein gutes Ergebnis.", "İyi bir sonuç elde etti."],
+    ["Hast du den Arzt erreicht?", "Doktora ulaşabildin mi?"]
+  ],
+  tip: "Hedefler ve telefon görüşmeleri için çok sık kullanılır."
+},
+
+"erzählen": {
+  explanation: "erzählen bir olayı, hikâyeyi veya bilgiyi sözlü olarak anlatmak anlamına gelir.",
+  usage: "Günlük konuşmada en sık kullanılan fiillerden biridir.",
+  pattern: "jdm. etw. erzählen",
+  other: "anlatmak",
+  synonyms: [
+    ["berichten", "anlatmak"],
+    ["schildern", "tasvir etmek"],
+    ["mitteilen", "aktarmak"]
+  ],
+  examples: [
+    ["Erzähl mir mehr davon.", "Bana bundan biraz daha anlat."],
+    ["Opa erzählt eine Geschichte.", "Dede bir hikâye anlatıyor."],
+    ["Kannst du das noch einmal erzählen?", "Bunu bir kez daha anlatabilir misin?"],
+    ["Sie erzählte von ihrer Reise.", "Seyahatinden bahsetti."],
+    ["Ich habe ihm alles erzählt.", "Ona her şeyi anlattım."]
+  ],
+  tip: "Çok yaygın kalıp: Erzähl mal!"
+},
+
+"wissen": {
+  explanation: "wissen bir bilgiye sahip olmak veya bir şeyi bilmek anlamına gelir.",
+  usage: "Almancanın en sık kullanılan fiillerinden biridir.",
+  pattern: "etw. wissen",
+  other: "bilmek",
+  synonyms: [
+    ["Kenntnis haben", "bilgi sahibi olmak"]
+  ],
+  examples: [
+    ["Ich weiß das nicht.", "Bunu bilmiyorum."],
+    ["Weißt du die Antwort?", "Cevabı biliyor musun?"],
+    ["Niemand weiß es.", "Kimse bilmiyor."],
+    ["Ich weiß genau, was passiert ist.", "Ne olduğunu tam olarak biliyorum."],
+    ["Woher weißt du das?", "Bunu nereden biliyorsun?"]
+  ],
+  tip: "Kennen ile karıştırılmamalıdır. Wissen = bilgi bilmek."
+},
+
+"denken": {
+  explanation: "denken zihinsel olarak bir konu üzerinde düşünmek anlamına gelir.",
+  usage: "Günlük konuşmada son derece yaygındır.",
+  pattern: "an etw. denken / über etw. nachdenken",
+  other: "düşünmek",
+  synonyms: [
+    ["nachdenken", "üzerinde düşünmek"],
+    ["überlegen", "düşünmek"]
+  ],
+  examples: [
+    ["Ich denke oft darüber nach.", "Bunu sık sık düşünüyorum."],
+    ["Was denkst du?", "Ne düşünüyorsun?"],
+    ["Denk gut darüber nach.", "Bunu iyice düşün."],
+    ["Ich denke, dass du recht hast.", "Haklı olduğunu düşünüyorum."],
+    ["Er denkt viel an seine Zukunft.", "Geleceğini çok düşünüyor."]
+  ],
+  tip: "Çok yaygın kalıp: Ich denke, dass ..."
+},
+
+"denken an": {
+  explanation: "denken an bir kişiyi, yeri veya olayı hatırlamak ya da aklına getirmek anlamına gelir.",
+  usage: "Duygusal ve günlük konuşmalarda çok sık kullanılır.",
+  pattern: "an + Akkusativ denken",
+  other: "birini/bir şeyi düşünmek",
+  synonyms: [
+    ["sich erinnern an", "hatırlamak"],
+    ["im Kopf haben", "aklında tutmak"]
+  ],
+  examples: [
+    ["Ich denke oft an meine Familie.", "Ailemi sık sık düşünüyorum."],
+    ["Denk bitte an den Termin.", "Lütfen randevuyu unutma."],
+    ["Er denkt an seine Kindheit.", "Çocukluğunu düşünüyor."],
+    ["Hast du daran gedacht?", "Bunu düşündün mü / hatırladın mı?"],
+    ["Wir denken an dich.", "Seni düşünüyoruz."]
+  ],
+  tip: "Dikkat: an + Akkusativ kullanılır."
+},
+
+"antworten": {
+  explanation: "antworten bir soruya, mesaja veya isteğe cevap vermek anlamına gelir. Dativ ile kullanılır.",
+  usage: "Günlük konuşmada ve e-postalarda çok yaygındır.",
+  pattern: "jdm. antworten",
+  other: "cevap vermek",
+  synonyms: [
+    ["reagieren", "yanıt vermek"],
+    ["erwidern", "cevap vermek"]
+  ],
+  examples: [
+    ["Bitte antworten Sie mir.", "Lütfen bana cevap verin."],
+    ["Er hat nicht geantwortet.", "Cevap vermedi."],
+    ["Warum antwortest du nicht?", "Neden cevap vermiyorsun?"],
+    ["Sie antwortete sofort.", "Hemen cevap verdi."],
+    ["Kannst du darauf antworten?", "Buna cevap verebilir misin?"]
+  ],
+  tip: "Dativ ister: Ich antworte dir."
+},
+
+"arbeiten": {
+  explanation: "arbeiten bir iş yapmak, çalışmak veya mesleğini icra etmek anlamına gelir.",
+  usage: "Almancanın en temel ve en sık kullanılan fiillerinden biridir.",
+  pattern: "arbeiten",
+  other: "çalışmak",
+  synonyms: [
+    ["tätig sein", "çalışmak"],
+    ["beschäftigt sein", "çalışıyor olmak"]
+  ],
+  examples: [
+    ["Ich arbeite heute bis 18 Uhr.", "Bugün saat 18'e kadar çalışıyorum."],
+    ["Wo arbeitest du?", "Nerede çalışıyorsun?"],
+    ["Sie arbeitet in einem Krankenhaus.", "Bir hastanede çalışıyor."],
+    ["Er arbeitet sehr viel.", "Çok çalışıyor."],
+    ["Wir arbeiten gemeinsam an dem Projekt.", "Projede birlikte çalışıyoruz."]
+  ],
+  tip: "Arbeiten an + Dativ kalıbı çok yaygındır."
+},
+
+"hoffen": {
+  explanation: "hoffen bir şeyin gerçekleşmesini istemek ve buna inanmak anlamına gelir.",
+  usage: "Günlük konuşmada çok sık kullanılır.",
+  pattern: "hoffen auf / hoffen, dass ...",
+  other: "umut etmek",
+  synonyms: [
+    ["erwarten", "ummak"],
+    ["zuversichtlich sein", "umutlu olmak"]
+  ],
+  examples: [
+    ["Ich hoffe, dass alles gut wird.", "Her şeyin iyi olacağını umuyorum."],
+    ["Wir hoffen auf eine positive Antwort.", "Olumlu bir cevap umuyoruz."],
+    ["Hoffentlich!", "Umarım!"],
+    ["Ich hoffe auf gutes Wetter.", "Güzel hava umuyorum."],
+    ["Was hoffst du?", "Ne umut ediyorsun?"]
+  ],
+  tip: "Çok yaygın kalıp: Ich hoffe, dass ..."
+},
+
+"bleiben": {
+  explanation: "bleiben bulunduğu yerde kalmak veya bir durumda devam etmek anlamına gelir.",
+  usage: "Almancanın en temel fiillerinden biridir.",
+  pattern: "bleiben",
+  other: "kalmak",
+  synonyms: [
+    ["verbleiben", "kalmak"],
+    ["da bleiben", "orada kalmak"]
+  ],
+  examples: [
+    ["Ich bleibe heute zu Hause.", "Bugün evde kalıyorum."],
+    ["Bitte bleiben Sie sitzen.", "Lütfen oturmaya devam edin."],
+    ["Wie lange bleibst du?", "Ne kadar kalacaksın?"],
+    ["Er blieb ruhig.", "Sakin kaldı."],
+    ["Wir bleiben in Kontakt.", "İletişimde kalacağız."]
+  ],
+  tip: "Çok yaygın kalıp: ruhig bleiben, zu Hause bleiben."
+},
+
+
+"finden": {
+  explanation: "finden bir şeyi bulmak, keşfetmek veya bir konu hakkında fikir sahibi olmak anlamına gelir.",
+  usage: "Günlük Almancanın en sık kullanılan fiillerinden biridir.",
+  pattern: "etw. finden / jdn. finden",
+  other: "bulmak",
+  synonyms: [
+    ["entdecken", "keşfetmek"],
+    ["auffinden", "bulmak"],
+    ["lokalisieren", "yerini bulmak"]
+  ],
+  examples: [
+    ["Ich finde meinen Schlüssel nicht.", "Anahtarımı bulamıyorum."],
+    ["Wie findest du das?", "Bunu nasıl buluyorsun?"],
+    ["Wir haben eine Lösung gefunden.", "Bir çözüm bulduk."],
+    ["Sie fand einen neuen Job.", "Yeni bir iş buldu."],
+    ["Kannst du das Dokument finden?", "Belgeyi bulabilir misin?"]
+  ],
+  tip: "Wie findest du ...? günlük Almancada çok yaygındır."
+},
+
+"brauchen": {
+  explanation: "brauchen bir şeye ihtiyaç duymak veya bir şeyin gerekli olması anlamına gelir.",
+  usage: "Günlük konuşmada son derece yaygındır.",
+  pattern: "etw. brauchen",
+  other: "ihtiyaç duymak, gerekmek",
+  synonyms: [
+    ["benötigen", "ihtiyaç duymak"],
+    ["nötig haben", "gereksinim duymak"]
+  ],
+  examples: [
+    ["Ich brauche Hilfe.", "Yardıma ihtiyacım var."],
+    ["Was brauchst du?", "Neye ihtiyacın var?"],
+    ["Wir brauchen mehr Zeit.", "Daha fazla zamana ihtiyacımız var."],
+    ["Du brauchst keine Angst zu haben.", "Korkmana gerek yok."],
+    ["Brauchen Sie etwas?", "Bir şeye ihtiyacınız var mı?"]
+  ],
+  tip: "Çok yaygın kalıp: brauchen + zu + Infinitiv (olumsuz)."
+},
+
+"machen": {
+  explanation: "machen yapmak, gerçekleştirmek veya oluşturmak anlamına gelir.",
+  usage: "Almancanın en temel ve en sık kullanılan fiillerindendir.",
+  pattern: "etw. machen",
+  other: "yapmak",
+  synonyms: [
+    ["tun", "yapmak"],
+    ["erledigen", "yerine getirmek"]
+  ],
+  examples: [
+    ["Was machst du?", "Ne yapıyorsun?"],
+    ["Ich mache meine Hausaufgaben.", "Ödevimi yapıyorum."],
+    ["Mach dir keine Sorgen.", "Endişelenme."],
+    ["Wir machen eine Pause.", "Mola veriyoruz."],
+    ["Kannst du das machen?", "Bunu yapabilir misin?"]
+  ],
+  tip: "Mach dir keine Sorgen kalıbı çok yaygındır."
+},
+
+"nehmen": {
+  explanation: "nehmen bir şeyi almak, kabul etmek veya yanında götürmek anlamına gelir.",
+  usage: "Günlük hayatta çok sık kullanılır.",
+  pattern: "etw. nehmen",
+  other: "almak",
+  synonyms: [
+    ["mitnehmen", "yanına almak"],
+    ["annehmen", "kabul etmek"]
+  ],
+  examples: [
+    ["Ich nehme den Bus.", "Otobüse biniyorum."],
+    ["Nimm bitte Platz.", "Lütfen oturun."],
+    ["Kann ich das nehmen?", "Bunu alabilir miyim?"],
+    ["Er nahm seine Tasche.", "Çantasını aldı."],
+    ["Ich nehme ein Wasser.", "Bir su alayım."]
+  ],
+  tip: "Restaurantlarda sık duyulur: Ich nehme ..."
+},
+
+"gehen": {
+  explanation: "gehen yürüyerek gitmek veya bir yere yönelmek anlamına gelir.",
+  usage: "Almancanın en temel fiillerinden biridir.",
+  pattern: "gehen",
+  other: "gitmek",
+  synonyms: [
+    ["laufen", "yürümek"],
+    ["sich begeben", "gitmek"]
+  ],
+  examples: [
+    ["Ich gehe nach Hause.", "Eve gidiyorum."],
+    ["Wann gehst du?", "Ne zaman gidiyorsun?"],
+    ["Wir gehen spazieren.", "Yürüyüşe çıkıyoruz."],
+    ["Er geht zur Arbeit.", "İşe gidiyor."],
+    ["Geh bitte nicht weg.", "Lütfen gitme."]
+  ],
+  tip: "gehen + zu / nach kullanımları çok önemlidir."
+},
+
+"kommen": {
+  explanation: "kommen bir yere doğru gelmek veya ulaşmak anlamına gelir.",
+  usage: "Günlük Almancada çok sık kullanılır.",
+  pattern: "kommen",
+  other: "gelmek",
+  synonyms: [
+    ["ankommen", "varmak"],
+    ["erscheinen", "gelmek"]
+  ],
+  examples: [
+    ["Komm bitte herein.", "Lütfen içeri gel."],
+    ["Wann kommst du?", "Ne zaman geliyorsun?"],
+    ["Ich komme später.", "Daha sonra geleceğim."],
+    ["Er kommt aus der Türkei.", "Türkiye'den geliyor."],
+    ["Danke, dass du gekommen bist.", "Geldiğin için teşekkürler."]
+  ],
+  tip: "Woher kommst du? Almancanın en yaygın sorularındandır."
+},
+
+"sehen": {
+  explanation: "sehen gözle görmek veya fark etmek anlamına gelir.",
+  usage: "En sık kullanılan temel fiillerden biridir.",
+  pattern: "jdn./etw. sehen",
+  other: "görmek",
+  synonyms: [
+    ["erblicken", "görmek"],
+    ["wahrnehmen", "fark etmek"]
+  ],
+  examples: [
+    ["Ich sehe dich.", "Seni görüyorum."],
+    ["Hast du das gesehen?", "Bunu gördün mü?"],
+    ["Wir sehen uns morgen.", "Yarın görüşürüz."],
+    ["Ich kann nichts sehen.", "Hiçbir şey göremiyorum."],
+    ["Sie sieht müde aus.", "Yorgun görünüyor."]
+  ],
+  tip: "Wir sehen uns! günlük vedalaşma ifadesidir."
+},
+
+"geben": {
+  explanation: "geben birine bir şey vermek veya sunmak anlamına gelir.",
+  usage: "Almancanın en temel fiillerinden biridir.",
+  pattern: "jdm. etw. geben",
+  other: "vermek",
+  synonyms: [
+    ["überreichen", "sunmak"],
+    ["aushändigen", "teslim etmek"]
+  ],
+  examples: [
+    ["Kannst du mir helfen?", "Bana yardım edebilir misin?"],
+    ["Ich gebe dir das Buch.", "Kitabı sana veriyorum."],
+    ["Gib mir bitte einen Moment.", "Bana lütfen bir dakika ver."],
+    ["Es gibt viele Möglichkeiten.", "Birçok imkan var."],
+    ["Wer gibt den Unterricht?", "Dersi kim veriyor?"]
+  ],
+  tip: "Es gibt = vardır kalıbı çok önemlidir."
+},
+
+"sagen": {
+  explanation: "sagen konuşarak bilgi vermek, söylemek veya ifade etmek anlamına gelir.",
+  usage: "Günlük konuşmanın en temel fiillerinden biridir.",
+  pattern: "jdm. etw. sagen",
+  other: "söylemek",
+  synonyms: [
+    ["äußern", "ifade etmek"],
+    ["mitteilen", "bildirmek"]
+  ],
+  examples: [
+    ["Was hast du gesagt?", "Ne dedin?"],
+    ["Ich sage die Wahrheit.", "Gerçeği söylüyorum."],
+    ["Kannst du mir das sagen?", "Bunu bana söyleyebilir misin?"],
+    ["Sie sagte nichts.", "Hiçbir şey söylemedi."],
+    ["Sag mal!", "Bir baksana / söylesene!"]
+  ],
+  tip: "Sagen ≠ sprechen. Sagen = söylemek, sprechen = konuşmak."
+},
+
+"werden": {
+  explanation: "werden olmak, dönüşmek veya geleceği ifade etmek için kullanılan yardımcı fiildir.",
+  usage: "Almancanın en önemli fiillerinden biridir.",
+  pattern: "werden",
+  other: "olmak",
+  synonyms: [
+    ["sich entwickeln zu", "dönüşmek"],
+    ["entstehen", "oluşmak"]
+  ],
+  examples: [
+    ["Ich werde Arzt.", "Doktor olacağım."],
+    ["Es wird kalt.", "Hava soğuyor."],
+    ["Wir werden sehen.", "Göreceğiz."],
+    ["Was möchtest du werden?", "Ne olmak istiyorsun?"],
+    ["Das wird schon klappen.", "Bu hallolacak."]
+  ],
+  tip: "Futur ve Passiv yapılarının temel fiilidir."
+},
+
+"sein": {
+  explanation: "sein var olmak, olmak veya bir durumda bulunmak anlamına gelir. Almancanın en temel fiilidir.",
+  usage: "Her seviyede ve her konuşmada kullanılır.",
+  pattern: "sein",
+  other: "olmak",
+  synonyms: [
+    ["existieren", "var olmak"]
+  ],
+  examples: [
+    ["Ich bin müde.", "Yorgunum."],
+    ["Wie geht es dir?", "Nasılsın?"],
+    ["Wir sind zu Hause.", "Evdeyiz."],
+    ["Er ist Arzt.", "O doktordur."],
+    ["Das ist richtig.", "Bu doğrudur."]
+  ],
+  tip: "Almancada en sık kullanılan fiildir."
+},
+
       "ausweichen": {
         explanation: "ausweichen fiili, bir şeyden kaçınmak, bir tehlikeden yana çekilmek veya doğrudan cevap vermekten kaçmak anlamına gelir. Hem gerçek anlamda bir arabadan, engelden ya da darbeden kaçmak için hem de mecaz anlamda bir sorudan veya konudan kaçınmak için kullanılır.",
         usage: "Günlük Almancada trafik, spor, tartışma ve soru-cevap durumlarında sık kullanılır. Bir kişi bir tehlikeden uzaklaştığında, bir engelin yolundan çekildiğinde veya zor bir soruya cevap vermekten kaçındığında bu fiil tercih edilir.",
