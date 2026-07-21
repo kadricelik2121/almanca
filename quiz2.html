@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Hörverstehen Teil 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #FFF8E1;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+    }
+    .container {
+      background: #FFFBEA;
+      padding: 3vw 3vw 2vw 3vw;
+      border-radius: 18px;
+      box-shadow: 0 2px 12px #0002;
+      margin: 0;
+      width: 100vw;
+      max-width: 100vw;
+      min-width: 100vw;
+      height: 100vh;
+      max-height: 100vh;
+      min-height: 100vh;
+      position: relative;
+      overflow-y: auto;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+    .page-number {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      background: #f3ca7b;
+      color: #7a5e1a;
+      font-size: 1.3rem;
+      font-weight: bold;
+      border-radius: 50%;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 6px #0002;
+      border: 2px solid #e6bb5c;
+      z-index: 10;
+      user-select: none;
+    }
+    .stats-box {
+      position: absolute;
+      top: 14px;
+      left: 26px;
+      background: #fffbe7;
+      color: #8b7200;
+      border: 1.2px solid #f3ca7b;
+      border-radius: 9px;
+      box-shadow: 0 1px 6px #0001;
+      padding: 5px 9px 4px 8px;
+      font-size: 0.68rem;
+      font-weight: bold;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 64px;
+      z-index: 10;
+      user-select: none;
+      letter-spacing: 0.4px;
+    }
+    .stats-title {
+      font-size: 0.68rem;
+      color: #bf9000;
+      font-weight: bold;
+      letter-spacing: 0.2px;
+      margin-bottom: 1px;
+    }
+    .stats-row {
+      margin-bottom: 0px;
+      font-size: 0.75rem;
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+    .stats-correct {
+      color: #259910;
+      font-size: 0.93rem;
+    }
+    .stats-wrong {
+      color: #b01111;
+      font-size: 0.93rem;
+    }
+    .main-title {
+      font-size: 2.2rem;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 12px;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+    }
+    .test-title {
+      font-size: 2rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-bottom: 18px;
+      text-transform: capitalize;
+    }
+    .code-box {
+      font-size: 2.4rem;
+      font-weight: bold;
+      color: #444;
+      letter-spacing: 5px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .option, .option * {
+      text-decoration: none !important;
+      outline: none !important;
+      box-shadow: none !important;
+      user-select: none;
+    }
+    .option {
+      background: #fafafa;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      padding: 13px 12px;
+      margin: 10px 0;
+      cursor: pointer;
+      font-size: 1.07rem;
+      display: flex;
+      align-items: flex-start;
+      transition: background 0.3s, border 0.3s, color 0.3s;
+    }
+    .option.selected.correct {
+      background: #eaffea;
+      border-color: #1cb31c;
+      color: #118011;
+      font-weight: bold;
+    }
+    .option.selected.incorrect {
+      background: #ffeaea;
+      border-color: #ee2222;
+      color: #b01111;
+      font-weight: bold;
+    }
+    .option:focus,
+    .option:active,
+    .option.selected:focus,
+    .option.selected:active,
+    .option span:focus,
+    .option span:active {
+      outline: none !important;
+      text-decoration: none !important;
+      box-shadow: none !important;
+    }
+    .option-number {
+      font-weight: bold;
+      margin-right: 13px;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+      text-decoration: none !important;
+      outline: none !important;
+      user-select: none;
+    }
+    .nav-btns {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 30px;
+      align-items: center;
+    }
+    .nav-btn {
+      background: #eee;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1.2rem;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.25s;
+      font-weight: bold;
+      box-shadow: 0 1px 5px #0001;
+      user-select: none;
+      margin: 0 4px;
+    }
+    .nav-btn:hover {
+      background: #e1e6fd;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="page-number" id="pageNumber">1</div>
+    <div class="stats-box" id="statsBox">
+      <div class="stats-title">İstatistik</div>
+      <div class="stats-row"><span class="stats-correct">✔</span> <span id="correctCount">0</span> <span>Doğru</span></div>
+      <div class="stats-row"><span class="stats-wrong">✗</span> <span id="wrongCount">0</span> <span>Yanlış</span></div>
+      <div class="stats-row">
+        <span>%</span>
+        <span id="correctPercent">0</span>
+        <span>Doğru</span>
+        <span>/</span>
+        <span id="wrongPercent">0</span>
+        <span>Yanlış</span>
+      </div>
+    </div>
+    <div class="main-title">Hörverstehen Teil 2</div>
+    <div class="test-title" id="testTitle"></div>
+    <div class="code-box" id="codeBox"></div>
+    <div id="options"></div>
+    <div class="nav-btns">
+      <button class="nav-btn" id="prevBtn">&#8592; Geri</button>
+      <button class="nav-btn" onclick="window.location.href='index.html'">Ana Sayfa</button>
+      <button class="nav-btn" id="nextBtn">İleri &#8594;</button>
+    </div>
+  </div>
+  <script>
+    // SESLER
+    const dogruSes = new Audio("https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg");
+    const yanlisSes = new Audio("https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg");
+
+    // Sadece 10 seçenekli testlerle örnek (Carina):
+    const tests = [
+      {
+        title: "Carina",
+        correct: [1,3,4,8,9,10], // 46=1, 47=2, 48=3, 49=4, 50=5, 51=6, 52=7, 53=8, 54=9, 55=10
+        options: [
+          "46. Der Berufseinstieg ist in anderen Ländern nicht leicht.",
+          "47. Carina ist ihr Beruf wichtiger als ihr Privatleben.",
+          "48. Carina hat sich der Agentur mit einem Film präsentiert.",
+          "49. Carina musste für einen Film ihr Gewicht stark verändern.",
+          "50. Carina macht lieber gefühlvolle Filme als Action-Filme.",
+          "51. Wegen der vielen Fehlstunden hatte Carina Probleme mit dem Direktor der Schule.",
+          "52. Carinas Eltern haben ihre Tochter von Anfang an unterstützt.",
+          "53. Carina finde den Wechsel zwischen Schule und Drehterminen nicht leicht.",
+          "54. Bei Dialogen darf man auch selbst etwas erfinden.",
+          "55. Carina empfiehlt, sich andere Schauspieler im Theater und in Filmen anzusehen."
+        ]
+      },
+      {
+        title: "Carina",
+        correct: [1,3,4,8,9,10], 
+        options: [
+          "46) Der Berufseinstieg ist in anderen Ländern nicht leicht.",
+          "47) Carina ist ihr Beruf wichtiger als ihr Privatleben.",
+          "48) Carina hat den Agentur mit einem Videofilm Interesse geweckt.",
+          "49) Carina hat für einen Film ein Dait gemacht.",
+          "50) Carina macht lieber gefühlvolle Filme als Action-Filme.",
+          "51) Wegen der vielen Fehlstunden hatte Carina Probleme mit dem Direktor der Schule.",
+          "52) Carinas Eltern haben ihre Tochter von Anfang an unterstützt.",
+          "53) Carina findet den Wechsel zwischen Schule und Drehterminen schwierig.",
+          "54) B  i Dialogen darf man auch selbst etwas erfinden.",
+          "55) Carina empfiehlt, sich andere Schauspieler im Theater und in Filmen anzuschauen."
+  ]
+},
+{
+        title: "Frau Schenk",
+        correct: [1,4,6,7,8], 
+        options: [
+         "46) Frau Schenk hat kurze blondierte Haar.",
+         "47) Angie ist der Künstlername von Frau Schenk.",
+         "48) Frau Schenk lebt seit etwas mehr als zwei Jahren in Bayer.",
+         "49) Der Interview hat keine guten Erinnerungen an seine Aufenthalte in Jugendherberge.",
+         "50) Auch in der modernen Jugendherberge von Frau Schenk gibt es Schlafraum mit mehr als zehn Bette.",
+         "51) Nur bei Schullassen achtet man auf Geschlechtertrennung in den Schlafräume.",
+         "52) Das Angebot an Speisen werden auf die Wünsche der Gäste zugeschnitten.",
+         "53) Schüler aus ländlichen Regionen sind meist unproblematische Gäste.",
+         "54) Das Reiten zählt zu dem Sportprogramm der Jugendherberge.",
+         "55) Frau Schenk muss für ihre Dienstwohnung 800€ bezahle."
+  ]
+},
+{
+        title: "Frau Schenk",
+        correct: [1,4,6,7,8], 
+        options: [
+         "46) Frau Schenk hat kurze blondierte Haar.",
+         "47) Angie ist der Künstlername von Frau Schenk.",
+         "48) Frau Schenk lebt seit etwas mehr als zwei Jahren in Bayer.",
+         "49) Der Interview hat keine guten Erinnerungen an seine Aufenthalte in Jugendherberge.",
+         "50) A uch in der modernen Jugendherberge von Frau Schenk gibt es Schlafraum mit mehr als zehn Bette.",
+         "51) Mädchen und jungen müssen in verschiedenen Schlafräumen schlafen.",
+         "52) In der Jugendherberge wird das Essen den Wünschen der Gästegruppen angepasst.",
+         "53) Schüler aus ländlichen Regionen sind in der Regel anständig.",
+         "54) Das Reiten zählt zu dem Sportprogramm der Jugendherberge.",
+        "55) Frau Schenk muss für ihre Dienstwohnung 800€ bezahle."
+  ]
+},
+
+      {
+  title: "Karimov",
+  correct: [2,5,8,9,10], // doğru şıklar: 47,50,53,54,55 (senin sisteme göre)
+  options: [
+    "46- Herr Karimov hat vor sechs Jahren die Internetplattform ZEITPLAN gegründet.",
+    "47- Die Mitglieder bekommen für ihre Hilfe ein Stunden Guthaben.",
+    "48- Herr Karimov hatte ein eigenes Handwerksunternehmen.",
+    "49- Nach dem Umzug aufs Land, war er auf die Hilfe der Nachbarn angewiesen.",
+    "50- Manchmal erwarten Mitglieder keine Gegenleistung für ihre Arbeit.",
+    "51- Meistens brauchen alleinstehende Frauen Herrn Karimovs Hilfe.",
+    "52- Viele Menschen sehen im ZEITPLAN eine Konkurrenz zu Handwerksbetrieben.",
+    "53- Herr Karimov erledigt nicht so gerne Büroarbeit.",
+    "54- Wer sich bei der Nachbarschaftshilfe einbringen möchte, muss sich persönlich vorstellen.",
+    "55- Herr Karimov brauchte vorübergehend einen Chauffeur."
+  ]
+},
+{
+  title: "Nadine Wagner",
+  correct: [2, 3, 5, 6, 8, 10],
+  options: [
+    "46 Nadine Wagner ist gerade erst von ihrer Weltreise zurückgekehrt.",
+    "47 Sie hatte vor der Weltreise einige Zweifel und Bedenken.",
+    "48 Die Journalistin ist während ihrer Reise auch geflogen.",
+    "49 Sie hat für dieses Abenteuer ihre Stelle gekündigt.",
+    "50 Ihre Freunde waren unterschiedlicher Meinung über ihre Vorhaben.",
+    "51 In Tadschikistan hat sie eine Zeit lang andere Motorradfahrer begleitet.",
+    "52 Sie hat auf der Reise ihr ganzes Erspartes aufgebraucht.",
+    "53 Nadine Wagner hat auf der Reise gelegentlich gearbeitet.",
+    "54 Sie hat am meisten ihre eigene Wohnung vermisst.",
+    "55 Nach ihrer Rückkehr musste sie nicht lange nach einer neuen Arbeit suchen."
+  ]
+},
+{
+  title: "Mallorca",
+  correct: [3, 4, 7],
+  options: [
+    "46 Die Zahl der deutschen Mallorca-Urlaub hat nur leicht abgenommen.",
+    "47 Nach Professor Kirsch achten die Deutschen bei der Wahl ihrer Urlaubsreisen nicht besonders auf die kosten.",
+    "48 Einige Einheimisch in Mallorca haben begonnen, sich gegen das Vordringen der deutschen Sprache zu wehren.",
+    "49 In Mallorca wird der Staat wegen der Umweltbelasungen zu Kasse bitten.",
+    "50 Viele Deutsche haben jetzt Rumänien und Ungarn als Reiseziel entdeckt.",
+    "51 Pfessor Kirsch weist auf günstige Angebote für Golfspieler am Plattensee hin.",
+    "52 Bulgarien hat sich als Urlaubsland sehr positiv entwickelt.",
+    "53 Viele Westdeutsche meiden Bulgarien, weil die Einreisemodalitäten abschreckend sind.",
+    "54 Seit Ende der neunziger Jahre geben die Deutschen mehr Geld für den Urlaub aus.",
+    "55 Durch die Vielzahl aktiver Senioren entsteht eine höhere Nachlrage nach Abenteuerreisen in ferne Länder."
+  ]
+},
+{
+  title: "Mallorca",
+  correct: [3, 4, 7],
+  options: [
+    "46 Die Zahl der deutschen Mallorca-Urlaub hat nur leicht abgenommen.",
+    "47 Nach Professor Kirsch achten die Deutschen bei der Wahl ihrer Urlaubsreisen nicht besonders auf die kosten.",
+    "48 Einige Einheimisch in Mallorca haben begonnen, sich gegen das Vordringen der deutschen Sprache zu wehren.",
+    "49 Für den Einbruch des Tourismus auf Mallorca sind verschiedene Faktoren verantwortlich.",
+    "50 Viele Deutsche haben jetzt Rumänien und Ungarn als Reiseziel entdeckt.",
+    "51 Pfessor Kirsch weist auf günstige Angebote für Golfspieler am Plattensee hin.",
+    "52 Bulgarien hat sich als Urlaubsland sehr positiv entwickelt.",
+    "53 Viele Westdeutsche meiden Bulgarien, weil die Einreisemodalitäten abschreckend sind.",
+    "54 Seit Ende der neunziger Jahre geben die Deutschen mehr Geld für den Urlaub aus.",
+    "55 Durch die Vielzahl aktiver Senioren entsteht eine höhere Nachlrage nach Abenteuerreisen in ferne Länder."
+  ]
+},
+
+{
+  title: "Julia",
+  correct: [1, 3, 4, 5, 8],
+  options: [
+    "Julia hatte an einem Schüleraustausch kein Interesse.",
+    "Die Lehrer in Julias Schule weigerten sich, mit dem Austauschschüler Englisch zu sprechen.",
+    "Frankreich ist als Aufenthaltsland bei Au-pairs nicht sehr gefragt.",
+    "Jula hatte auch darüber nachgedacht, in die Schweiz zu fahren.",
+    "Julia empfiehlt, mit der Gastfamilie einen Vertrag zu schließen.",
+    "Zu Beginn der Au-pair-Bewegung schickten Familien ihre Kinder zum Sprachunterricht in die Schweiz.",
+    "Julia ist der Meinung, dass die Vermittlungskosten zu hoch sind.",
+    "Julia verbrachte mit den Kindern auch Zeit in Paris.",
+    "Es gab am Anfang Momente, in denen sich Julia der Gastfamilie nicht zugehörig fühlte.",
+    "Julia lernt im Sprachkurs mehr Französisch als durch den Kontakt mit der Gastfamilie."
+  ]
+},
+{
+  title: "Professor Steiner",
+  correct: [2, 9, 10],
+  options: [
+    "46) Professor Steiner ist heute gar nicht mehr nervös, wenn er moderieren muss.",
+    "47) Steiner möchte, dass die Studierenden das Gelernte auch in der Praxis anwenden können.",
+    "48) Steiners Hobby ist es, experimentelle Filme zu machen.",
+    "49) Journalisten sollten heute auf einzelne Medien spezialisiert sein.",
+    "50) Nach Steiners Ansicht ist der Berufswunsch Sportjournalist heutzutage unrealistisch.",
+    "51) Journalisten sollten Lust haben, etwas zu entdecken.",
+    "52) Steiner musste wegen einer Verletzung mit dem Fußballspielen aufhören.",
+    "53) Steiner hat während seines Journalistik-Studiums für das ZDF Fußballspiele kommentiert.",
+    "54) Steiner ist wichtig, als Moderator den Sportlern gegenüber neutral zu bleiben.",
+    "55) Steiner rät Abiturienten dazu, verschiedene berufliche Möglichkeiten zu testen."
+  ]
+},
+
+      {
+  title: "Professor Steiner",
+  correct: [2, 9, 10],
+  options: [
+    "46) Professor Steiner ist heute gar nicht mehr nervös, wenn er moderieren muss.",
+    "47) Steiner vermittelt den Studierenden nicht nur theoretisches Wissen, sondern fordert auch, dass es praktisch angewendet wird.",
+    "48) Steiners Hobby ist es, experimentelle Filme zu machen.",
+    "49) Journalisten sollten heute auf einzelne Medien spezialisiert sein.",
+    "50) Sport-Journalist zu werden, ist nach Steiners Ansicht heute fast ausgeschlossen.",
+    "51) Journalisten sollten möglichst viele Informationen an die Öffentlichkeit weitergeben.",
+    "52) Steiner musste wegen einer Verletzung mit dem Fußballspielen aufhören.",
+    "53) Steiner hat während seines Journalistik-Studiums für das ZDF Fußballspiele moderiert.",
+    "54) Steiner ist es wichtig, als Moderator den Sportlern gegenüber neutral zu bleiben.",
+    "55) Steiner rät Abiturienten dazu, verschiedene berufliche Möglichkeiten zu testen." ]
+},
+
+            {
+  title: "Vanessa",
+  correct: [2, 3, 4, 6, 8, 10],
+  options: [
+          "46) Vanessa versucht, so viele Orte wie möglich zu besuchen..",
+          "47) Mit den Arbeitsbedingungen in der Werbeagentur war Vanessa unzufrieden.",
+          "48) Wenn Vanessa unter Menschen ist, schadet das manchmal ihrer Konzentration.",
+          "49) Die Sicherheit, die eine feste Stelle bietet, bedeutet Vanessa nicht viel.",
+          "50) Vanessa ist sich sicher, dass sie nie mehr als Angestellte arbeiten möchte.",
+          "51) Dass sie immer wieder neue Auftraggeber suchen muss, hat für Vanessa auch Vorteile.",
+          "52) Vanessas Eltern würden auch gerne öfter verreisen.",
+          "53) Es fiel Vanessa leicht, sich von persönlichen Gegenständen zu trennen.",
+          "54) Vanessa glaubt, dass man in Zukunft in mehr Berufen ortsunabhängig arbeiten kann.",
+          "55) Auch wer ortsunabhängig arbeitet, sollte nicht zu oft den Ort wechseln."
+
+
+  ]
+},
+
+
+{
+  title: "Suza",
+  correct: [1, 3, 4, 8],
+  options: [
+    "Für die Autorin Suza Hotop ist Schreiben Freude und Anstrengung zugleich.",
+    "Suza begann im Alter von zwölf jahren mit ihrem Buch Jenseits von Zaram.",
+    "Am Anfang dachte Suza nicht daran, ihre Geschichte zu veröffentlichen.",
+    "Zuerst Stellte Suza Auszüge ihrer Geschichte ins Internet.",
+    "Begeisterte Nutzer stellten den Kontakt zu einem Verlag her.",
+    "Suza beschreibt bewusst Personen aus ihrem eigenen Umfeld.",
+    "Die Autorin plant im Vorfeld genau, was in der Geschichte passieren wird.",
+    "Suza folgt beim Schreiben keinen besonderen Vorbildern.",
+    "Die junge Frau gab während des Radiointerviews eine Leseprobe.",
+    "Suza braucht immer Ruhe, um schreiben zu können."
+  ]
+},
+{
+  title: "Suza",
+  correct: [1, 3, 4, 7, 8],
+  options: [
+    "Für die Autorin Suza Hotop ist Schreiben Freude und Anstrengung zugleich.",
+    "Suza begann im Alter von zwölf jahren mit ihrem Buch Jenseits von Zaram.",
+    "Am Anfang dachte Suza nicht daran, ihre Geschichte zu veröffentlichen.",
+    "Zuerst stellte Suza Auszüge ihrer Geschichte ins Internet.",
+    "Begeisterte Nutzer stellten den Kontakt zu einem Verlag her.",
+    "Suza beschreibt bewusst Personen aus ihrer meignen Umfeld.",
+    "Die Autorin plant nicht ganz genau, was in der Geschichte passieren wird.",
+    "Suza folgt beim Schreiben keinen besonderen Vorbildern.",
+    "Die junge Frau gab während des Radiointerviews eine Leseprobe.",
+    "Suza braucht immer Ruhe, um schreiben zu können."
+  ]
+},
+
+{
+  title: "In dem Restaurant",
+  correct: [1, 3, 4, 8, 9],
+  options: [
+    "In dem Restaurant gab es einen Wasserschaden.",
+    "Anton Laurito ist bei seinen Großeltern aufgewachsen.",
+    "Im Haus der Großeltern lebten auch andere Kinder.",
+    "Der Stress störte den Studiogast während der Ausbildung nicht.",
+    "Bei neuen Mitarbeitern legt Anton Laurito am meisten Wert auf viel Erfahrung.",
+    "Aussehen und Geschmack der Speisen haben für den Koch den gleichen Stellenwert.",
+    "In der Essschule können Kinder kochen lernen.",
+    "Anton Laurito lehnt Fastfood nicht grundsätzlich ab.",
+    "Der Koch hat eine gesunde Einstellung zum Thema Wettbewerb.",
+    "Zuhause probiert er gerne komplizierte Gerichte aus."
+  ]
+},
+{
+  title: "Frau Schenk",
+  correct: [1, 4, 6, 7, 8],
+  options: [
+    "Frau Schenk hat kurze blondierte Haar.",
+    "Angie ist der Künstlername von Frau Schenk.",
+    "Frau Schenk lebt seit etwas mehr als zwei Jahren in Bayer.",
+    "Der Interview hat keine guten Erinnerungen an seine Aufenthalte in Jugendherberge.",
+    "Auch in der modernen Jugendherberge von Frau Schenk gibt es Schlafraum mit mehr als zehn Bette.",
+    "Nur bei Schullassen achtet man auf Geschlechtstrennung in den Schlafräume.",
+    "Das Angebot an Speisen werden auf die Wünsche der Gäste zugeschnitten.",
+    "Schüler aus ländlichen Regionen sind meist unproblematische Gäste.",
+    "Das Reiten zählt zu dem Sportprogramm der Jugendherberge.",
+    "Frau Schenk muss für ihre Dienstwohnung 800€ bezahle."
+  ]
+},
+{
+  title: "Herr Gasser und Frau Janke",
+  correct: [3, 4, 8, 9, 10],
+  options: [
+    "Herr Gasser und Frau Janke haben zusammen Urlaub im Geiberg gemacht.",
+    "Josef Gasser ist ein gebürtiger Tiroler.",
+    "Die Bergbauern können kaum von verkauf ihrer Produkte leben.",
+    "Auch heute werden die steilen Hänge noch manuell bearbeitet.",
+    "Josef Gasser findet dass man die Bergkandschaft sich selbst über lassen sollte.",
+    "Eva Janke begeistert sich immer noch für Flugreisen.",
+    "Ihren ersten Einsatz auf der Alm hat.",
+    "für frau Janke ist der Erholungswert trotz der Anstrengung sehr hoch.",
+    "Alm helferinin und helfer können viel Fältige Aufgaben übernehmen.",
+    "über die Dauer des Aufenthalt kann man Frei entscheiden."
+  ]
+},
+{
+  "title": "Markus",
+  "correct": [2, 4, 5, 8, 10],
+  "options": [
+    "46 Markus ist schon während des Studiums an eine amerikanische Universität gegangen.",
+    "47 Markus wollte in einem besonders erfolgreichen Team mitarbeiten.",
+    "48 Um eine Stelle in einer amerikanischen Forschergruppe zu bekommen, muss man viel Glück haben.",
+    "49 Markus befindet sich zwischen Ausbildung und Beruf.",
+    "50 Das Studium in Bonn hat Markus sehr gut auf den Auslandsaufenthalt vorbereitet.",
+    "51 Markus hatte nach der Ankunft in den USA sehr viele Schwierigkeiten.",
+    "52 Markus ist nach wie vor sehr in der fremden Umgebung.",
+    "53 Markus ist mit den Arbeitsbedingungen zufrieden.",
+    "54 Markus befürwortet es nicht, dass sich Studenten in der USA früh auf ihre zukünftige Beruf festlegen müssen.",
+    "55 Für Markus ist Vorteil, dass er in Deutschland die Referat und Vortrag halten müsste."
+  ]
+},
+{
+  "title": "Markus",
+  "correct": [2, 4, 5, 8, 10],
+  "options": [
+    "46) Markus ist schon während des Studiums an eine amerikanische Universität gegangen.",
+    "47) Markus wollte in einem besonders erfolgreichen Team mitarbeiten.",
+    "48) Um eine Stelle in einer amerikanischen Forschergruppe zu bekommen, muss man viel Glück haben.",
+    "49) Markus befindet sich zwischen Ausbildung und Beruf.",
+    "50) Markus profitiert in Amerika von Erfahrung, die während Studium sammelt.",
+    "51) Markus hatte nach der Ankunft in den USA sehr viele Schwierigkeiten.",
+    "52) Markus ist immer noch sehr nervös in der fremden Umgebung.",
+    "53) Markus ist mit den Arbeitsbedingungen zufrieden.",
+    "54) Markus befürwortet es nicht, dass sich Studenten in der USA früh auf ihre zukünftige Berufe festlegen müssen.",
+    "55) Für Markus ist vorteil dass er in Deutschland viele Referate und Vorträge halten musste."
+  ]
+},
+
+{
+  title: "Roland hören liga",
+  correct: [2, 3, 5, 8, 9],
+  options: [
+    "Roland Wünschmann Spielt selbst bei Viktoria Köln Fußball.",
+    "Viktoria Köln spielt seit Beginn der Saison in einer höheren Liga.",
+    "Die meisten Spieler der Mannschaft haben schon in der letzten Saison bei Viktoria Köln gespielt.",
+    "Neuzugänge kommen bei Viktoria Köln meist aus ganz unterschiedlichen Mannschaften.",
+    "Die Mannschaft von Viktoria Köln möchte in dieser Saison neue Spieltaktiken ausprobieren.",
+    "Roland Wünschmann wagt die Prognose, dass in dieser Saison der 1. FC Mönchengladbach Meister wird.",
+    "Roland Wünschmann empfindet sein Ehrenamt oft als Bealstung.",
+    "Roland Wünschmann Frau engagiert sich für denselben Verein.",
+    "Herr Wünschmann und der Vereinsvorstand sind meisten einer Meinung.",
+    "Roland Wünschmann hofft auf Verbesserungen in der Nachwuchsförderung."
+  ]
+},
+{
+  title: "Roland spielen",
+  correct: [2, 3, 4, 7, 9, 10],
+  options: [
+    "Roland wünschmann arbeitet Vollzeit als Fußballtrainer bei Viktoria Köln.",
+    "Viktoria Köln möchte nicht nur gegen Mannschaften aus der Verbandsliga spielen.",
+    "Zu Beginn dieser Saison hat ein Spieler Viktoria Köln verlassen.",
+    "Neue Spieler kommen bei Viktoria Köln immer aus der eigenen Jugendmannschaft.",
+    "Die Mannschaft von Viktoria Köln hat Schwächen in der Abwehr.",
+    "Roland wünschmann wagt die Prognose, dass dieser Saison der 1 FC Mönchengladbach Meister wird.",
+    "Roland wünschmann kann seinen Beruf und sein Ehrenamt als Fußballtrainer Problems miteinander vereinbaren.",
+    "Auch die Frau von Ronald wünschmann engagiert sich im Fußball.",
+    "Der vereinsvorstand schätzt Herrn wünschmann Arbeit.",
+    "Roland wünschmann ist mit bisherigen Nachwuchsförderung des Vereins zufrieden."
+  ]
+},
+{
+  title: "Roland aufsteigen",
+  correct: [3, 4, 7, 9],
+  options: [
+    "Roland wünschmann spielt selbst bei Viktoria Köln Fußball.",
+    "Viktoria Köln möchte am Ende der Spielsaison aufsteigen.",
+    "Zu Beginn dieser Saison hat ein Spieler Viktoria Köln verlassen.",
+    "Neue Spieler kommen bei Viktoria Köln immer aus der eigenen Jugendmannschaft.",
+    "Die Mannschaft von Viktoria Köln hat Schwächen in der Abwehr.",
+    "Roland wünschmann wagt die Prognose, dass dieser Saison der 1 FC Mönchengladbach Meister wird.",
+    "Roland wünschmann kann seinen Beruf und sein Ehrenamt als Fußballtrainer miteinander vereinbaren.",
+    "Auch die Frau von Ronald wünschmann engagiert sich im Fußball.",
+    "Der vereinsvorstand schätzt Herrn wünschmann Arbeit.",
+    "Roland wünschmann ist mit bisherigen Nachwuchsförderung des Vereins noch nicht voll zufrieden."
+  ]
+},
+{
+  "title": "Urlaub in Spanien.",
+  "correct": [1, 6, 7, 8],
+  "options": [
+    "46) Der Hauptpreis des Gewinnspiels ist ein rund vierwöchiger Urlaub in Spanien.",
+    "47) Sie können in der Sendung auch schöne Bildbände über verschiedene Länder gewinnen.",
+    "48) Thomas Schilp vertritt einen großen Wohnmobilhändler.",
+    "49) Für das Wohnmobil Camper 500F benötigt man einen Zusatzführerschein.",
+    "50) Wohnmobile für Reisen in Europa sollte man erst am Urlaubsort mieten.",
+    "51) Reisende mit Wohnmobilen schätzen ihre Unabhängigkeit.",
+    "52) Auf Luxus muss man im Wohnwagen auch heute nicht verzichten.",
+    "53) Wer den Urlaub mit dem Wohnmobil erst einmal ausprobieren will, sollte ein gebrauchtes Fahrzeug kaufen.",
+    "54) Deutsche zahlen für ein Wohnmobil durchschnittlich 200.000 Euro.",
+    "55) Der Mietpreis für ein Wohnmobil hängt von der Jahreszeit ab."
+  ]
+},
+
+{
+  "title": "Herr Scherer",
+  "correct": [3, 4, 10],
+  "options": [
+    "46) Herr Scherer wird an seinem Arbeitsplatz interviewt.",
+    "47) Herr Scherer probt jede Woche zweimal mit dem Kirchenchor.",
+    "48) Herr Scherer hat wechselnde Arbeitszeiten.",
+    "49) Verspätungen gehen häufig auf das Konto undiszipliniert Fahrgäste.",
+    "50) Herr Scherer und seine Kollegen verkaufen keine Fahrscheine mehr.",
+    "51) Alkoholisierten Fahrgäste verursachen zunehmend Probleme.",
+    "52) Die Verkehrsbetriebe haben ein eigenes Schwimmbad.",
+    "53) Herr Scherer hat bei der Bundeswehr eine Ausbildung zum Automechaniker gemacht.",
+    "54) Herr Scherer hat bei der Post 15 Jahre in Nachtschicht gearbeitet.",
+    "55) Die Klimatisierung der Busse ist bei hohen Temperaturen nicht ausreichend."
+  ]
+},
+
+{
+  "title": "Frau Edler",
+  "correct": [1, 2, 3, 5, 6, 7, 9],
+  "options": [
+    "46) Frau Edler arbeitete früher für die Verkehrsbetriebe Leipzig.",
+    "47) Zum ersten Mal wurde sie in Frankfurt mit dem Problem der Straßenkinder konfrontiert.",
+    "48) Zu Anfang kümmerte sie sich um obdachlose Erwachsene.",
+    "49) Sie hat den Straßenkindern immer Geld gegeben.",
+    "50) Die Kinder (Kids) wollten, nach Meinung von Frau Edler, Zigaretten kaufen.",
+    "51) Sie hat mit den Kindern in leer stehenden Häusern übernachtet.",
+    "52) Die Kolleginnen hatten anfangs kein Verständnis für ihr Engagement.",
+    "53) Die Zahl der Kinder, die an den Weihnachtsfeiern teilnehmen, ist seit 1990 stark gesunken.",
+    "54) Sie sammelt noch heute bei den früheren Kollegen Geld für die Straßenkinder.",
+    "55) Mit einer Büchse herumzulaufen, ist ihr manchmal peinlich."
+  ]
+},
+
+{
+  "title": "Mirjam Pressler",
+  "correct": [1, 2, 5, 7, 10],
+  "options": [
+          "46) Mirjam Pressier freut sich, in Kürze die Doktorwürde der Universität Groningen zu erhalten.",
+          "47) Sie arbeitet auch als Übersetzerin.",
+          "48) Sie hat als Erste Anne Frank ins Deutsche übersetzt.",
+          "49) Sie macht jedes Jahr Urlaub in einem Ferienhaus bei Venedig.",
+          "50) Wenn Sie an ihre Kindheit denkt, denkt sie an den Krieg.",
+          "51) Der Kontakt zu ihren Pflegeeltern war sehr gut.",
+          "52) Ihre Werke haben oft biographische Züge.",
+          "53) Ihre erste Lektüre war ein Roman, der in Petersburg spielt.",
+          "54) Als Kind las sie immer im Keller des Hauses.",
+          "55) Ihre Pflegemutter wollte nicht, dass sie Tagebuch schreibt."
+
+  ]
+},
+      {
+  "title": "Mirjam Pressler",
+  "correct": [1, 2, 3, 5, 7, 10],
+  "options": [
+    "46) Mirjam Pressler freut sich, in Kürze die Doktorwürde der Universität Groningen zu erhalten.",
+    "47) Sie arbeitet auch als Übersetzerin.",
+    "48) Sie hat über Anne Frank gearbeitet.",
+    "49) Sie macht jedes Jahr Urlaub in einem Ferienhaus bei Venedig.",
+    "50) Wenn sie an ihre Kindheit denkt, denkt sie an den Krieg.",
+    "51) Der Kontakt zu ihren Pflegeeltern war sehr gut.",
+    "52) Ihre Werke haben oft biografische Züge.",
+    "53) Ihr erste Lektüre war ein Roman, der in Petersburg spielt.",
+    "54) Als Kind las sie immer im Keller des Hauses.",
+    "55) Ihre Pflegemutter wollte nicht, dass sie Tagebuch schreibt."
+  ]
+},
+
+{
+  "title": "Ole, der Koch",
+  "correct": [1, 2, 3, 4, 6, 8, 9],
+  "options": [
+    "46) Zu Beginn der Sendung hatte der Reporter ein exklusives Frühstücksrezept erwartet.",
+    "47) Ole hat sich vor 17 Jahren selbstständig gemacht.",
+    "48) Davor hatte er eine Lehre als Koch absolviert.",
+    "49) Er bevorzugt Gerichte ohne Fleisch.",
+    "50) Ole sieht wie ein Punker aus.",
+    "51) Er kocht für Musiker, die auf Tournee sind.",
+    "52) Zuletzt hat er für die Band „Die Prinzen“ gekocht.",
+    "53) Ole nimmt eine komplette Kücheneinrichtung mit auf Tournee.",
+    "54) Er macht sich über den Sender lustig, weil der Reporter bei englischen Wörtern nachfragt.",
+    "55) Die Musiker müssen immer essen, was auf den Tisch kommt."
+  ]
+},
+      {
+  "title": "Die TU Dresden",
+  "correct": [3, 5, 7, 8, 10],
+  "options": [
+          "46) Die TU Dresden ist eine kleine Universität.",
+          "47) An der TU Dresden kann man nur technische Fächer studieren.",
+          "48) Ältere Studierende kümmern sich um neue Studierende.",
+          "49) Man erreicht die Neustadt nicht mit öffentlichen Verkehrsmitteln.",
+          "50) Jens ist nicht sicher, ob er nach dem Studium einen interessanten Job bekommt.",
+          "51) Studienanfänger können noch zwischen Bachelor und Diplom wählen.",
+          "52) Mit dem Semesterticket dürfen Studierende öffentliche Verkehrsmitteln in Dresden nützen.",
+          "53) Für Studienanfänger gibt es die Möglichkeit bestimmte Grundkenntnisse aufzufrischen.",
+          "54) Im Studium gibt es keine Gruppenarbeit.",
+          "55) An der TU Dresden kann man auch außergewöhnliche Sportarten treiben."
+
+  ]
+},
+
+{
+  "title": "Kinder und Familien",
+  "correct": [1, 2, 3, 6, 7, 8, 9, 10],
+  "options": [
+    "46) Fast 11500 Kinder leben nicht bei ihren leiblichen Eltern.",
+    "47) Früher wurden Fälle von Gewalt in der Familie oft nicht bekannt.",
+    "48) Kinder werden nicht sofort von ihren Familien getrennt.",
+    "49) Materielle Unterstützung wie Elektrogeräte kann keine Hilfe sein.",
+    "50) Die Nachmittagsbetreuung für die ältesten Kinder ist kostenlos.",
+    "51) In Skandinavien gibt es eine bessere Familienvorsorge.",
+    "52) Früher lernte man Erziehung an Modellsituationen in der Großfamilie.",
+    "53) Der Kontakt zwischen Kindern und leiblichen Eltern wird möglichst erhalten.",
+    "54) Es gibt spezielle WGs für Jugendliche, die nicht bei ihren Eltern leben.",
+    "55) Herr Blaschitz bittet die Hörer um Unterstützung."
+  ]
+},
+
+{
+  "title": "Bicycle",
+  "correct": [3, 6, 9],
+  "options": [
+    "46) Das ist ein Interview mit dem Restaurant „Bicycle“.",
+    "47) Gert Kronheim ist der alleinige Gründer von Bicycle.",
+    "48) Bicycle bietet Arbeitsplätze für junge Leute, die schon länger arbeitslos sind.",
+    "49) Bicycle gibt es schon seit 1926.",
+    "50) Anlass für die Gründung von Bicycle war die steigende Arbeitslosigkeit Anfang der 80er Jahre.",
+    "51) Gert Kronheimer findet, dass das Fahrrad für junge Leute interessant ist.",
+    "52) Das Fahrrad ist heute leider sehr unpopulär geworden.",
+    "53) Bei Bicycle kann man nur Vollzeit arbeiten.",
+    "54) Bei Bicycle werden im Jahr ungefähr 10000 Fahrräder repariert.",
+    "55) Sibylle Hartung ist nur eine Assistentin und keine Expertin für technische Fragen."
+  ]
+},
+
+{
+  "title": "Eva Küpper",
+  "correct": [2, 4, 5, 8, 9],
+  "options": [
+    "46) Die Radiosendung stellt wöchentlich Leute aus ganz Deutschland vor.",
+    "47) Eva Küpper läuft im Training wenigstens einmal pro Woche auch über die Marathondistanz.",
+    "48) Ihren Job als Bankangestellte würde Eva Küpper gerne kündigen.",
+    "49) Nach der Ausbildung hat Eva Küpper ihren Lebensstil radikal verändert.",
+    "50) Eva Küpper kommt ursprünglich aus München.",
+    "51) Eva Küpper gefallen Dauerläufe in der Stadt genauso gut wie in den Bergen.",
+    "52) Während eines Ultramarathons wechselt Eva Küpper die Laufschuhe dreimal.",
+    "53) Die spezielle Uhr ist für Eva Küpper nicht nur im Training, sondern auch im Wettkampf wichtig.",
+    "54) Solange der Körper gesund ist, will Eva Küpper weiterhin Ultramarathons laufen.",
+    "55) Nach dem Berlin Marathon kann Eva Küpper dem Lauf-Club offiziell beitreten."
+  ]
+},
+
+{
+  "title": "Psychische Gesundheit am Arbeitsplatz",
+  "correct": [3, 4, 5, 7, 8],
+  "options": [
+    "46) Weniger als zehn Prozent der Fehltage am Arbeitsplatz sind auf psychische Erkrankungen zurückzuführen.",
+    "47) Betroffene Arbeitnehmer sprechen relativ offen über ihre psychischen Probleme.",
+    "48) Auch Arbeitslosigkeit ist ein Risikofaktor für psychische Probleme.",
+    "49) Schlechte Stimmung am Arbeitsplatz ist die Hauptursache für psychische Erkrankungen.",
+    "50) Menschen, die zu wenig zu tun haben, versuchen, das nicht zu zeigen.",
+    "51) Menschen, die am Arbeitsplatz wenig zu tun haben, sind besonders zufrieden.",
+    "52) Internet und Smartphone können einen Einfluss auf die Psyche haben.",
+    "53) Wem seine Arbeit Spaß macht, der kann eher mehr leisten.",
+    "54) Bei Managern ist das Risiko für psychische Erkrankungen unter allen Berufsgruppen am höchsten.",
+    "55) Für die psychische Gesundheit ist es besser, arbeitslos zu sein, als eine nur durchschnittlich interessante Arbeit zu finden."
+  ]
+},
+
+
+{
+  "title": "Wellness-Hotels in Deutschland",
+  "correct": [3, 5, 9],
+  "options": [
+    "46) Die Deutschen machen zurzeit gerne bis zu drei Wochen oder mehr Urlaub.",
+    "47) Viele Wellness-Hotels befinden sich in Großstädten.",
+    "48) Wellness-Angebote gibt es vor allem in Hotels der gehobenen Kategorie.",
+    "49) Die von den Hotels angebotenen „Pakete“ enthalten in der Regel Vollpension.",
+    "50) In den Hotels kann man auch schwimmen und in die Sauna gehen.",
+    "51) Die Gäste nehmen die Sportangebote kaum wahr.",
+    "52) Oft bieten die Hotels auch kulturelle Rahmenprogramme wie Stadtführungen und Opernbesuche an.",
+    "53) Frauen kommen fast immer in Begleitung ihrer Ehemänner.",
+    "54) Die Hotels haben besondere Angebote für Männer.",
+    "55) Mitglieder von Krankenkassen können die Hotels kostenlos besuchen."
+  ]
+},
+      
+{
+  "title": "Franz Schumacher",
+  "correct": [1, 2, 4, 6, 8, 10],
+  "options": [
+          "46) Franz Schumacher handelt nicht nur mit Produkten aus eigenem Anbau.",
+          "47) Herr Schumacher lässt sich auch von anderen Bauern Produkte liefern.",
+          "48) Auf dem Markt sind schon viele Besucher unterwegs.",
+          "49) Die große Mehrheit der Kunden von Herrn Schumacher sind Stammkunden.",
+          "50) Herr Schumacher ist auf die Pfälzer Kartoffeln besonders stolz.",
+          "51) Franz Schumacher hat keine hohe Meinung vom „Fachhändlerverein vom Rathausplatz“.",
+          "52) Herr Schumacher kommt morgens sehr früh auf den Markt, um sich einen guten Platz für seinen Stand zu sichern.",
+          "53) Herr Schumacher hat seit über 20 Jahren einen Stand auf dem Landauer Markt.",
+          "54) Herr Schumacher trägt eine Mütze, um sich vor Kälte zu schützen.",
+          "55) Herr Schumacher möchte in Zukunft einen Verkaufsstand in einer Markthalle eröffnen."
+
+  ]
+},
+
+      {
+  "title": "Frau Pesina",
+  "correct": [1, 2, 3, 7, 10],
+  "options": [
+          "46) Frau Pesina ist die Chefin des Kosmos Kinos.",
+          "47) Von Hanau nach Frankfurt braucht man weniger als eine halbe Stunde.",
+          "48) Die Gründung des Kinos vor 100 Jahren war eher ein Zufall.",
+          "49) Der Großonkel baute sofort einen separaten Kinosaal.",
+          "50) Nach ihrem Großonkel leitete gleich Frau Pesina das Kino.",
+          "51) Manchmal denkt sie, es wäre besser gewesen, die sichere Stelle bei der Bank zu behalten.",
+          "52) In dem Kino gibt es heute außer der Schwägerin und den beiden Schwestern auch noch weitere Mitarbeiter.",
+          "53) Der Arbeitsalltag im Kino läuft immer völlig reibungslos ab.",
+          "54) Frau Pesina entscheidet immer allein, was im Kosmos Kino läuft.",
+          "55) Manchmal gibt es in dem Kino ein spezielles Programm für Frauen."
+
+
+  ]
+},
+            {
+  "title": "Auf dem Gipfel",
+  "correct": [1, 4, 5, 7, 9, 10],
+  "options": [
+          "46) Auf dem Gipfel der Zugspitze liegt ungefähr ein Meter Schnee.",
+          "47) Man kann derzeit auf der Zugspitze Ski fahren.",
+          "48) Auch in Garmisch-Partenkirchen selbst hat es geschneit.",
+          "49) In der kommenden Woche erwartet man für die Zugspitzregion freundliches Wetter.",
+          "50) Am Sonntag wird ein Gottesdienst auf einer Bergstation abgehalten.",
+          "51) Die Zugspitze kann man momentan wegen des Nebels nicht erkennen.",
+          "52) Die Urlauber in Garmisch-Partenkirchen haben bei jedem Wetter genügend Möglichkeiten zur Freizeitgestaltung.",
+          "53) Herr Werner erwartet keine Wetterbesserung.",
+          "54) Auch in früheren Jahren hat es im Juni und August geschneit.",
+          "55) Herr Werner ist mit seinem Arbeitsplatz zufrieden."
+
+
+
+  ]
+},
+                  {
+  "title": " Am 24. April ",
+  "correct": [1, 2, 5, 6, 8],
+  "options": [
+          "46) Am 24. April ist der Fashion Revolution Day.",
+          "47) Der Anlass für den Fashion Revolution Day ist der Einsturz des Fabrikgebäudes in Bangladesch.",
+          "48) Nur wenige Menschen wurden beim Einsturz schwer verletzt.",
+          "49) An diesem Tag wird nur schwarze Kleidung getragen.",
+          "50) Eine Näherin verdient dort ca. 20 Cent.",
+          "51) Die Clean Clothes Kampagne fordert bereits seit Jahren einen existenzsichernden Lohn.",
+          "52) Faire Mode ist im Geschäft teurer, weil größere Serien produziert werden.",
+          "53) Eine andere Attraktion ist das Filmscreening des Films Traceable.",
+          "54) Nach dem Film ist die Veranstaltung zu Ende.",
+          "55) Weitere Informationen können auf der Webseite traceable.org abgerufen werden."
+
+
+
+
+  ]
+},
+                        {
+  "title": "Herr Kemper",
+  "correct": [1, 3, 6, 7, 9, 10],
+  "options": [
+          "46) Herr Kemper arbeitet aus Dankbarkeit für die Hilfe, die er früher bekommen hat, ehrenamtlich.",
+          "47) Der Tierschutz hat für Herrn Kemper oberste Priorität.",
+          "48) Herr Kemper hat zuerst handwerkliche Arbeiten im Tierheim gemacht.",
+          "49) Herr Kemper hat es abgelehnt, Reinigungsarbeiten zu übernehmen.",
+          "50) Alle Helferinnen und Helfer arbeiten mehrmals in der Woche im Tierheim.",
+          "51) Greta hat angefangen, ehrenamtlich zu arbeiten, weil sie zu Hause Langeweile hatte.",
+          "52) Herr Kemper hat einer jungen Frau geholfen, ihren beruflichen Weg zu finden.",
+          "53) Herr Kemper findet, dass sich jeder Mensch ehrenamtlich engagieren sollte.",
+          "54) Herr Kemper hat auch Verständnis für Menschen, die sich nicht ehrenamtlich engagieren.",
+          "55) Herr Kemper wohnt in einem Haus, in dem Tierhaltung verboten ist."
+
+
+
+
+
+  ]
+},
+             {
+  "title": "Frau Hahn",
+  "correct": [2, 4, 6, 8, 10],
+  "options": [
+          "46) Der Journalist spricht mit einer Kundin im Kaufhaus.",
+          "47) Frau Hahn hat ihren Beruf im Kaufhaus Brock gelernt.",
+          "48) Frau Hahn wollte schon als Kind Verkäuferin im Kaufhaus Brock werden.",
+          "49) Frau Hahn fand es wichtig, nette Kollegen zu haben.",
+          "50) Frau Hahns Mann arbeitet jetzt im demselben Kaufhaus wie sie.",
+          "51) Der Mann von Frau Hahn hat als Schuhverkäufer gearbeitet.",
+          "52) Das Kaufhaus Brock wird nach der Schließung abgerissen.",
+          "53) Frau Hahn findet es wichtig, in einem schönen Haus zu arbeiten.",
+          "54) Die neuen Inhaber hätten das Kaufhaus gerne weitergeführt.",
+          "55) Frau Hahn will nicht in einem anderen Kaufhaus arbeiten."
+
+
+
+
+
+
+  ]
+},
+      
+  {
+  "title": "Lisa",
+  "correct": [2, 3, 4, 6, 8],
+  "options": [
+          "46) Lisa Eisenberg war beruflichen Gründen in den USA.",
+          "47) Während einer Reise entschied sich Lisa Eisenberg für einen beruflichen Neuanfang.",
+          "48) Lisa Eisenbergs Geschäftsidee stieß in ihrem Bekanntenkreis auf Skepsis.",
+          "49) Lisa Eisenberg hat sich auf regionale Speisen spezialisiert.",
+          "50) In der Mittagszeit erzielt Lisa Eisenberg den Großteil ihres Umsatzes.",
+          "51) Lisa Eisenberg muss nicht mehr aktiv nach Kunden suchen.",
+          "52) Lisa Eisenberg bietet für Firmen täglich auch abends Gerichte an.",
+          "53) Es ist für Lisa Eisenberg leicht, ein geeignetes Fahrzeug zu finden.",
+          "54) Lisa Eisenberg hat als Studentin nebenbei in der Gastronomie gearbeitet.",
+          "55) In den nächsten Monaten wird Lisa Eisenberg einen zweiten Wagen kaufen."
+
+
+
+  ]
+},
+
+        {
+  "title": " Frau Makeba ",
+  "correct": [5, 9, 10],
+  "options": [
+          "46) Meron Makeba hat schon in Ghana Leichtathletik gemacht.",
+          "47) Frau Makeba ist mit ihrem Ergebnis bei der WM sehr zufrieden.",
+          "48) Frau Makeba hat im vergangenen Jahr ihre Eltern in Ghana besucht.",
+          "49) Das Publikum hat bei der WM die Sportler aller Nationen unterstützt.",
+          "50) Frau Makeba trifft selten andere Sportler aus Ghana.",
+          "51) Für Frau Makeba ist Ghana noch immer ihre Heimat.",
+          "52) Wegen ihres Migrationshintergrundes hatte Frau Makeba keine Schwierigkeiten.",
+          "53) Anfangs war Frau Makeba in ihrem Verein die einzige Migrantin.",
+          "54) Frau Makeba glaubt nicht, dass man aufgrund der Herkunft in bestimmten Sportarten bevorzugt wird.",
+          "55) Frau Makebas Erfahrungen im privaten Bereich unterscheiden sich stark von denen im Sport."
+
+
+  ]
+},
+        {
+  "title": " Thomas Hirschbaum ",
+  "correct": [1, 3, 9],
+  "options": [
+          "46) Nach seinem Studium hat Thomas Hirschbaum zuerst im IT-Bereich gearbeitet.",
+          "47) Er hat den Managementbereich in seiner Firma gegründet.",
+          "48) Es hat ihm gefallen, Verantwortung für sein 50-köpfiges Team zu haben.",
+          "49) Seine Eltern haben erwartet, dass er einmal mehr Geld verdient als sie.",
+          "50) Seit seinem Start ins Berufsleben hatte er keine Freizeit mehr.",
+          "51) Er hat sich oft nicht gut gefühlt, wenn er an seine Familie dachte.",
+          "52) Nach seinem 40. Geburtstag hatte er den Wunsch, mal einen Monat Urlaub zu machen.",
+          "53) Sein Chef war sofort mit dem Vorschlag einverstanden, die Arbeit anders zu organisieren.",
+          "54) Wie sein Kollege arbeitet Thomas Hirschbaum jetzt halbtags.",
+          "55) Trotzdem steht die Arbeit für ihn an oberster Stelle."
+
+
+
+  ]
+},
+              {
+  "title": " Astrid Nowak  ",
+  "correct": [2, 3, 5, 9],
+  "options": [
+          "46) Astrid Nowak hat ihr ganzes Berufsleben in der Stadtbibliothek verbracht.",
+          "47) Die meisten Besucher/innen der Stadtbibliothek wollen Medien ausleihen.",
+          "48) Viele halten sich gern in den attraktiven Räumen der Bibliothek auf.",
+          "49) Die Bibliothek bietet ihre Dienstleistungen seit Jahren auch sonntags an.",
+          "50) Die vielfältigen Angebote der Bibliothek sind gratis nutzbar.",
+          "51) Ein Angebotsschwerpunkt sind Informationsmedien für jüngere Leute.",
+          "52) Man kann in der Bibliothek auch elektronische Geräte mieten.",
+          "53) Heute finden nur Kurse aus dem Bereich Medien und Technik statt.",
+          "54) Es gibt einen Raum, in dem man mit anderen zusammen moderne technische Werkzeuge ausprobieren kann.",
+          "55) Die Bibliotheken in Deutschland werden genauso häufig genutzt wie Kinos oder Museen."
+
+
+  ]
+},
+
+                    {
+  "title": " Elias Wunderlich ",
+  "correct": [3, 5, 6, 9, 10],
+  "options": [
+          "46) Mit der Gründung der Eisschwimmervereinigung wollte Elias Wunderlich dem Eisschwimmen unter anderem zu einem offiziellen Status verhelfen.",
+          "47) Das Eisschwimmen hat Elias Wunderlich durch den Austausch mit anderen Sportlern entdeckt.",
+          "48) Die Ärzte sind sich einig, dass Eisschwimmen die Gesundheit fördert.",
+          "49) Nur durchtrainierte Menschen sollten Eisschwimmen betreiben.",
+          "50) Für den Einstieg in den Eisschwimmsport ist der Winterbeginn der beste Zeitpunkt.",
+          "51) Elias Wunderlich hält sich strikt an seine eigenen Empfehlungen.",
+          "52) Warmhaltendes Fett wird auch durch die Reaktion des Körpers auf Kälte erzeugt.",
+          "53) Bei Wettbewerben ist schützende Ganzkörperbekleidung vorgesehen.",
+          "54) Elias Wunderlich nimmt an Wettbewerben teil, um zu siegen.",
+          "55) Laut Elias Wunderlich kann Eisschwimmen zur Abhängigkeit führen."
+
+
+
+  ]
+},
+
+                          {
+  "title": " Wettkampf ",
+  "correct": [1, 2, 4, 6],
+  "options": [
+          "46) Beim Wettkampf auf Sylt gibt es mehr Zuschauer als bei anderen Surf-Wettkämpfen.",
+          "47) Die Wind-Bedingungen sind auf Sylt sehr unberechenbar.",
+          "48) Herr Dunderbeck ist noch immer so fit wie früher.",
+          "49) Im Freestyle hat er schon starke Gegner, die viel jünger sind als er.",
+          "50) Beim Slalom muss er auch mit starken Gegnern rechnen.",
+          "51) Sein Hobby ist, solche Strände zu suchen, wo sich im Windsurfen noch niemand ausprobiert hat.",
+          "52) Er hat ständig Angst vor den Haien.",
+          "53) Seine Kinder haben noch ein bisschen Angst vor dem Wasser, obwohl er sie schon aufs Brett gesetzt hatte.",
+          "54) Falls er auf Sylt siegen würde, würde er dies zuerst gerne mit seinen Freunden feiern.",
+          "55) Er hat zwei Kinder und sie gehen mit ihm auf Reisen."
+
+
+  ]
+},
+
+                                {
+  "title": " in Malta",
+  "correct": [2, 3, 6, 7, 10],
+  "options": [
+          "46) Sie kommt aus Düsseldorf.",
+          "47) Sie lebt jetzt in Malta.",
+          "48) Sie ist effektiv und tätig in Malta.",
+          "49) Sie möchte zu Van... umziehen.",
+          "50) Sie genießt die ganze Jahr im Mittelmeer baden.",
+          "51) Der Moderator kennt die Temperatur des Mittelmeers im Winter nicht.",
+          "52) Der Moderator denkt, in Malta gibt es drei Amtssprachen.",
+          "53) Die Malteser waren konservativ und zurückhaltend.",
+          "54) Sie plante, die maltesische Sprache zu lernen.",
+          "55) Malteser kommen aus verschiedenen Religionen."
+
+
+
+  ]
+},
+
+                                      {
+  "title": " in Malta 2",
+  "correct": [2, 4, 5, 8, 9],
+  "options": [
+          "46) Sie kommt aus Düsseldorf.",
+          "47) Sie lebt jetzt in Malta.",
+          "48) Sie ist effektiv und tätig in Malta.",
+          "49) Sie genießt die ganze Jahr im Mittelmeer baden.",
+          "50) Der Moderator kennt die Temperatur des Mittelmeers im Winter nicht.",
+          "51) Der Moderator denkt, in Malta gibt es drei Amtssprachen.",
+          "52) Die Malteser waren konservativ und zurückhaltend.",
+          "53) Malteser kommen aus verschiedenen Religionen.",
+          "54) Sie plante, die maltesische Sprache zu lernen.",
+          "55) Sie möchte zu Van... umziehen."
+
+  ]
+},
+
+                                            {
+  "title": " Frau Kiddar ",
+  "correct": [2, 3, 6, 7, 9],
+  "options": [
+          "46) Frau Kiddar stammt aus Düsseldorf.",
+          "47) Sie lebt heute auf Malta.",
+          "48) Sie ist auf Malta beruflich tätig.",
+          "49) Frau Kiddar möchte gerne bald nach Valletta ziehen.",
+          "50) Sie genießt es, das ganze Jahr über im Mittelmeer zu baden.",
+          "51) Der Moderator weiß nicht, wie viel Grad das Mittelmeer im Winter hat.",
+          "52) Frau Kiddar weist darauf hin, dass die Einwohner Maltas ursprünglich aus verschiedenen Regionen stammten.",
+          "53) Die Malteser haben sich ihr gegenüber aber zurückhaltend, ja misstrauisch verhalten.",
+          "54) Der Moderator denkt, dass es auf Malta drei Amtssprachen gibt.",
+          "55) Frau Kiddar plant, bald die maltesische Sprache zu lernen."
+
+
+  ]
+},
+
+                                                  {
+  "title": " Viele befürchten ",
+  "correct": [1, 2, 4, 6, 8, 10],
+  "options": [
+           "46) Viele befürchten, dass es durch das neue Gesetz zu weiteren Mittelkürzungen kommt.",
+          "47) In Zukunft werden weniger Erzieherinnen gebraucht als heute.",
+          "48) Künftig soll es mehr Krippenplätze für Kinder unter drei Jahren geben.",
+          "49) Der Besuch von Kindergärten soll kostenlos werden.",
+          "50) Die Mehrheit der Kleinkinder wird auch weiterhin zu Hause betreut werden.",
+          "51) Bei Bedarf setzt die Sprachförderung im vierten Lebensjahr ein.",
+          "52) Deutsche Kinder haben keinen Anspruch auf staatliche Sprachförderung.",
+          "53) Im Elternhaus wird die Sprachförderung der Kinder immer häufiger vernachlässigt.",
+          "54) Herr Teichmann sieht in Bezug auf Sprachförderung auch auf Seiten der Politik Handlungsbedarf.",
+          "55) Die Ausbildung der Erzieherinnen soll künftig an Hochschulen angesiedelt sein."
+
+
+
+  ]
+},
+
+
+      // Diğer testler de yine aynı şekilde buraya eklenebilir.
+    ];
+
+    // --- BURADAN SONRASI KESİNLİKLE AYNI KALMALI ---
+    let totalCorrect = 0;
+    let totalWrong = 0;
+    let totalAnswered = 0;
+
+    let currentTest = 0;
+    let selected = [];
+    let lockedOptions = [];
+    let testJustEnded = false;
+
+    function resetStats() {
+      totalCorrect = 0;
+      totalWrong = 0;
+      totalAnswered = 0;
+      updateStatsBox();
+      testJustEnded = false;
+    }
+
+    function updateStatsBox() {
+      totalAnswered = totalCorrect + totalWrong;
+      let correctPercent = totalAnswered === 0 ? 0 : Math.round(100 * totalCorrect / totalAnswered);
+      let wrongPercent = totalAnswered === 0 ? 0 : Math.round(100 * totalWrong / totalAnswered);
+      document.getElementById('correctCount').innerText = totalCorrect;
+      document.getElementById('wrongCount').innerText = totalWrong;
+      document.getElementById('correctPercent').innerText = correctPercent;
+      document.getElementById('wrongPercent').innerText = wrongPercent;
+    }
+
+    function renderTest() {
+      const test = tests[currentTest];
+      document.getElementById("testTitle").innerText = test.title;
+      document.getElementById("pageNumber").innerText = currentTest + 1;
+
+      selected = [];
+      lockedOptions = Array(test.options.length).fill(false);
+      document.getElementById("codeBox").innerText = "";
+      const optionsDiv = document.getElementById("options");
+      optionsDiv.innerHTML = "";
+      test.options.forEach((opt, idx) => {
+        const option = document.createElement("div");
+        option.className = "option";
+        option.innerHTML = `<span class="option-number">${idx+1}.</span> <span>${opt}</span>`;
+        option.onclick = () => handleOptionClick(idx);
+        optionsDiv.appendChild(option);
+      });
+      updateStatsBox();
+    }
+
+    function removeUnderlineFromOption(idx) {
+      const optionsDiv = document.getElementById("options");
+      const optionDiv = optionsDiv.children[idx];
+      optionDiv.style.textDecoration = "none";
+      const spans = optionDiv.querySelectorAll("*");
+      spans.forEach(s => s.style.textDecoration = "none");
+    }
+
+    function handleOptionClick(idx) {
+      if (testJustEnded) {
+        resetStats();
+        testJustEnded = false;
+      }
+      const test = tests[currentTest];
+      if (lockedOptions[idx]) return;
+
+      const correctAnswers = test.correct;
+      const isCorrect = correctAnswers.includes(idx+1);
+
+      const optionsDiv = document.getElementById("options");
+      const optionDiv = optionsDiv.children[idx];
+
+      optionDiv.classList.add("selected");
+      optionDiv.classList.add(isCorrect ? "correct" : "incorrect");
+      removeUnderlineFromOption(idx);
+
+      if (isCorrect) {
+        dogruSes.currentTime = 0;
+        dogruSes.play().catch(e => console.log("Doğru ses çalma hatası:", e));
+        lockedOptions[idx] = true;
+        selected.push(idx+1);
+        totalCorrect++;
+      } else {
+        yanlisSes.currentTime = 0;
+        yanlisSes.play().catch(e => console.log("Yanlış ses çalma hatası:", e));
+        lockedOptions[idx] = true;
+        totalWrong++;
+      }
+      updateStatsBox();
+
+      // Tüm doğru cevaplar seçildiyse kodu göster
+      const sortedSel = selected.slice().sort((a,b) => a-b);
+      const sortedCor = test.correct.slice().sort((a,b) => a-b);
+      if (sortedSel.length === sortedCor.length && sortedSel.every((v,i) => v===sortedCor[i])) {
+        document.getElementById("codeBox").innerText = sortedSel.map(x => x === 10 ? 0 : x).join("");
+        Array.from(optionsDiv.children).forEach((optDiv, i) => {
+          lockedOptions[i] = true;
+          removeUnderlineFromOption(i);
+        });
+        if (currentTest === tests.length - 1) {
+          setTimeout(() => {
+            testJustEnded = true;
+            resetStats();
+          }, 1400);
+        }
+      }
+    }
+
+    document.getElementById("prevBtn").onclick = () => {
+      if (currentTest > 0) {
+        currentTest--;
+        renderTest();
+      }
+    };
+    document.getElementById("nextBtn").onclick = () => {
+      if (currentTest < tests.length-1) {
+        currentTest++;
+        renderTest();
+      }
+    };
+    renderTest();
+  </script>
+</body>
+</html>
